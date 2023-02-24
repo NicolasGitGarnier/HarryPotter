@@ -1,4 +1,4 @@
-package org.example.composants;
+package HarryPotterCode.composants;
 
 import java.util.List;
 

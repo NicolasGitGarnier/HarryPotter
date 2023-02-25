@@ -2,7 +2,7 @@ package HarryPotterCode.composants;
 
 import java.util.List;
 
-public class Wizard {
+public class Wizard extends Character{
     private Pet pet;
     private Wand wand;
     private House house;

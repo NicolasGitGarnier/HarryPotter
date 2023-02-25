@@ -1,4 +1,4 @@
 package HarryPotterCode.composants;
 
-public class AbstractEnemy {
+public class AbstractEnemy extends Character{
 }

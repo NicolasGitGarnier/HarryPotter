@@ -1,4 +1,4 @@
 package HarryPotterCode.composants;
 
-public class Boss {
+public class Boss extends AbstractEnemy{
 }

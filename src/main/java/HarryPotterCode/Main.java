@@ -8,12 +8,11 @@ import java.util.ArrayList;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Bienvenue dans le monde des sorciers...");
-
+        System.out.println("Welcome into Harry Potter's World...");
         // Creating the main character
-        System.out.print("Entrez votre prénom : ");
+        System.out.print("Enter your first name : ");
         String firstName = sc.nextLine();
-        System.out.print("Entrez votre nom de famille : ");
+        System.out.print("Enter your last name : ");
         String lastName = sc.nextLine();
 
         Wand wand = new Wand(Wand.getCore(), Wand.getWandSize());
@@ -30,15 +29,15 @@ public class Main {
         System.out.println(" | |  | (_) | |_| | (_| | | (_| | | | (_| |  / ____ \\ (_| |\\ V /  __/ | | | |_| |_| | | |  __/");
         System.out.println(" |_|   \\___/ \\__,_|\\__,_|_|\\__,_|_|  \\__,_| /_/    \\_\\__,_| \\_/ \\___|_| |_|\\__|\\__,_|_|  \\___|");
         System.out.println("________________________________________________________________________________________________");
-        System.out.println("Bonjour "+ wizard.getFirstName() + " " + wizard.getLastName()+ ".");
-        System.out.println("Bienvenu à Poudlard !");
-        System.out.println("Votre baguette magique est en "+ wand.getCore() + " de taille "+wand.getWandSize()+ ".");
-        System.out.println("Vous appartenez à la maison " + wizard.getHouse()+ ".");
+        System.out.println("Hi "+ wizard.getFirstName() + " " + wizard.getLastName()+ ".");
+        System.out.println("Welcome to Hogwart !");
+        System.out.println("Your wand is made of "+ wand.getCore() + " and is "+wand.getWandSize()+ " cm long.");
+        System.out.println("You are in the " + wizard.getHouse()+ " house.");
         //Choose your Pet
         Pet pet = Pet.getPet();
         wizard.setPet(pet);
-        System.out.println("Ainsi votre animal de compagnie est un(e) " + pet.name().toLowerCase() + ".");
-        System.out.println("Que l'aventure commence !");
+        System.out.println("Now, you own a " + pet.name().toLowerCase() + ".");
+        System.out.println("Let's start the adventure !");
 
     }
 }

@@ -30,10 +30,14 @@ public class Main {
         System.out.println(" | |  | (_) | |_| | (_| | | (_| | | | (_| |  / ____ \\ (_| |\\ V /  __/ | | | |_| |_| | | |  __/");
         System.out.println(" |_|   \\___/ \\__,_|\\__,_|_|\\__,_|_|  \\__,_| /_/    \\_\\__,_| \\_/ \\___|_| |_|\\__|\\__,_|_|  \\___|");
         System.out.println("________________________________________________________________________________________________");
-        System.out.println("Bonjour "+ wizard.getFirstName() + " " + wizard.getLastName());
+        System.out.println("Bonjour "+ wizard.getFirstName() + " " + wizard.getLastName()+ ".");
         System.out.println("Bienvenu à Poudlard !");
-        System.out.println("Votre baguette magique est en "+ wand.getCore() + " de taille "+wand.getWandSize());
-        System.out.println("Vous appartenez à la maison " + wizard.getHouse());
+        System.out.println("Votre baguette magique est en "+ wand.getCore() + " de taille "+wand.getWandSize()+ ".");
+        System.out.println("Vous appartenez à la maison " + wizard.getHouse()+ ".");
+        //Choose your Pet
+        Pet pet = Pet.getPet();
+        wizard.setPet(pet);
+        System.out.println("Ainsi votre animal de compagnie est un(e) " + pet.name().toLowerCase() + ".");
         System.out.println("Que l'aventure commence !");
 
     }

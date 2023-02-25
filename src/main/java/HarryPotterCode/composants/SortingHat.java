@@ -1,11 +1,12 @@
 package HarryPotterCode.composants;
 
+import lombok.experimental.UtilityClass;
+
+@UtilityClass
 public class SortingHat {
     public static House assignHouse() {
-
         // Generate a random number between 0 and 99
         int randomNum = (int) (Math.random() * 100);
-
         // Assign a house based on the random number
         if (randomNum == 0) {
             return House.SLYTHERIN;

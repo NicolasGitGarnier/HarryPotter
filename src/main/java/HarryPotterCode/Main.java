@@ -22,7 +22,9 @@ public class Main {
         //Start of the aventure
         System.out.println("");
         System.out.println("");
-        System.out.println("Bonjour "+ wizard.getFirstName() + " " + wizard.getLastName() + ", et bienvenue à Poudlard !");
+        System.out.println("Bonjour "+ wizard.getFirstName() + " " + wizard.getLastName());
+        System.out.println("Bienvenu à Poudlard !");
+        System.out.println("");
         System.out.println("Votre baguette magique est en "+ wand.getCore() + " de taille "+wand.getWandSize());
         System.out.println("Vous appartenez à la maison " + wizard.getHouse());
         System.out.println("Que l'aventure commence !");

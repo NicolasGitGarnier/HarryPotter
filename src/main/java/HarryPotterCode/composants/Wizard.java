@@ -1,5 +1,4 @@
 package HarryPotterCode.composants;
-import java.beans.ConstructorProperties;
 import java.util.List;
 
 import lombok.AllArgsConstructor;
@@ -10,6 +9,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Wizard extends Character{
+    private String firstName;
+    private String lastName;
     private Pet pet;
     private Wand wand;
     private House house;
@@ -20,3 +21,4 @@ public class Wizard extends Character{
 
     }
 }
+

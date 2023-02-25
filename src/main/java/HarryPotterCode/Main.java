@@ -16,11 +16,12 @@ public class Main {
         System.out.print("Entrez votre nom de famille : ");
         String lastName = sc.nextLine();
 
-        Wizard wizard = new Wizard( firstName, lastName, null, null, SortingHat.assignHouse(), new ArrayList<>(),new ArrayList<>() );
+        Wand wand = new Wand(Wand.getCore(), Wand.getWandSize());
+        Wizard wizard = new Wizard( firstName, lastName, null, wand, SortingHat.assignHouse(), new ArrayList<>(),new ArrayList<>() );
 
         System.out.println("Bonjour "+ wizard.getFirstName() + " " + wizard.getLastName() + ", bienvenue à Poudlard !");
+        System.out.println("La baguette magique vous correspondant le mieux est en "+ wand.getCore() + " et de taille "+wand.getWandSize());
         System.out.println("Le Choipeau Magic vous a attribué à la maison " + wizard.getHouse());
 
-        System.out.println("La baguette magique vous correspondant le mieux est en "+ Wand.getCore() + " et de taille "+Wand.getWandSize());
     }
 }

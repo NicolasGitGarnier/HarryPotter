@@ -1,5 +1,6 @@
 package HarryPotterCode.composants;
 
+import java.beans.ConstructorProperties;
 import java.util.List;
 
 public class Wizard extends Character{
@@ -17,6 +18,6 @@ public class Wizard extends Character{
     }
 
     public void defend() {
-        // code de la méthode defend
+
     }
 }

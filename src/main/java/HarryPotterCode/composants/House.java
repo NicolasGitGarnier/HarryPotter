@@ -1,4 +1,8 @@
 package HarryPotterCode.composants;
 
-public class House {
+public enum House {
+    HUFFLEPUFF,
+    SLYTHERIN,
+    GRYFFINDOR,
+    RAVENCLAW,
 }

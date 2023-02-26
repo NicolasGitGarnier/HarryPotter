@@ -17,8 +17,6 @@ public class Wizard extends Character{
     private List<Spell> knownSpells;
     private List<Potion> potions;
 
-    public void defend() {
-
-    }
+    public void defend() {}
 }
 

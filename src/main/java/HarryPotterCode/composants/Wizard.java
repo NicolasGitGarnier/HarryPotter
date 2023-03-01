@@ -53,17 +53,17 @@ public class Wizard extends Character{
             spells = spells.substring(0, spells.length() - 2);
         }
         return "Wizard{" +
-                "health=" + health +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", wand=" + wand +
+                ", house='" + house + '\'' +
+                ", pet=" + pet +
+                ", health=" + health +
                 ", defence=" + defence +
                 ", damage=" + damage +
                 ", accuracy=" + accuracy +
                 ", dodge=" + dodge +
                 ", potionDamage=" + potionDamage +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", pet=" + pet +
-                ", wand=" + wand +
-                ", house='" + house + '\'' +
                 ", knownSpells=[" + spells + "]" +
                 ", potions=" + potions +
                 '}';

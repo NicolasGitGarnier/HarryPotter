@@ -17,10 +17,10 @@ public class Spell extends AbstractSpell{
         Scanner sc = new Scanner(System.in);
         String spell = null;
         while (spell == null) {
-            System.out.println("Enter Wingardium Leviosa if you want to learn it :");
+            System.out.println("Enter Wingardium Leviosaaa if you want to learn it :");
             String choice = sc.nextLine();
             switch (choice) {
-                case "Wingardium Leviosa":
+                case "Wingardium Leviosaaa":
                     Spell wingardiumLeviosa = new Spell("Wingardium Leviosa", 2);
                     knownSpells.add(wingardiumLeviosa);
                     spell = choice;
@@ -30,6 +30,6 @@ public class Spell extends AbstractSpell{
                     break;
             }
         }
-        System.out.println("You have succed to learned the spell: " + spell);
+        System.out.println("You have succed to learned the spell Wingardium Leviosa");
     }
 }

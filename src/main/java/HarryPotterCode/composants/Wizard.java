@@ -28,16 +28,16 @@ public class Wizard extends Character{
 
     public static Wizard createWizard(int health, int defence, int damage, int accuracy, int dodge, int potionDamage, String firstName, String lastName, Pet pet, Wand wand, House house, List<Spell> knownSpells, List<Potion> potions) {
         Wizard wizard = new Wizard(health, defence, damage, accuracy, dodge, potionDamage, firstName, lastName, pet, wand, house, knownSpells, potions);
-        if (house == House.SLYTHERIN || pet == Pet.CAT) {
+        if (house == House.SLYTHERIN) {
             wizard.setDamage(damage + 5);
         }
-        if (house == House.GRYFFINDOR || pet == Pet.OWL) {
+        if (house == House.GRYFFINDOR) {
             wizard.setDefence(defence + 5);
         }
-        if (house == House.RAVENCLAW || pet == Pet.RAT) {
+        if (house == House.RAVENCLAW) {
             wizard.setAccuracy(accuracy + 5);
         }
-        if (house == House.HUFFLEPUFF || pet == Pet.TOAD) {
+        if (house == House.HUFFLEPUFF) {
             wizard.setPotionDamage(potionDamage + 5);
         }
         return wizard;

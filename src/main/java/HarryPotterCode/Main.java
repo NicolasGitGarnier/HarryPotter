@@ -1,6 +1,9 @@
 package HarryPotterCode;
 
 import HarryPotterCode.composants.*;
+
+import java.lang.Character;
+import java.util.Random;
 import java.util.Scanner;
 import java.util.ArrayList;
 
@@ -16,7 +19,7 @@ public class Main {
         String lastName = sc.nextLine();
         // Setting the data of the character
         Wand wand = new Wand(Wand.getCore(), Wand.getWandSize());
-        Wizard wizard = new Wizard( firstName, lastName, null, wand, SortingHat.assignHouse(), new ArrayList<>(),new ArrayList<>() );
+        Wizard wizard = Wizard.createWizard(20, 5, new Random().nextInt(3) + 3, 5, 5, new Random().nextInt(3) + 3, firstName, lastName, null, wand, SortingHat.assignHouse(), new ArrayList<>(), new ArrayList<>());
         //Start of the aventure
         System.out.println("");
         System.out.println("");
@@ -39,7 +42,7 @@ public class Main {
 
         System.out.println("");
         System.out.println("Let's start the adventure !");
-        System.out.println("Bilan of the data :"+ wizard.getFirstName() + " " + wizard.getLastName() + " " + wizard.getPet() + " " + wizard.getHouse() + " " + wizard.getPotions() + " " + wizard.getKnownSpells());
+        System.out.println("Bilan des statistiques :" +wizard.toString());
         System.out.println("");
 
         System.out.println("*You are now in the first grade at Poudlard. Here is your first class.*\n"+

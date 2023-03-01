@@ -43,8 +43,34 @@ public class Wizard extends Character{
         return wizard;
     }
 
+    @Override
+    public String toString() {
+        String spells = "";
+        for (Spell spell : knownSpells) {
+            spells += spell.getName() + ", ";
+        }
+        if (spells.length() > 0) {
+            spells = spells.substring(0, spells.length() - 2);
+        }
+        return "Wizard{" +
+                "health=" + health +
+                ", defence=" + defence +
+                ", damage=" + damage +
+                ", accuracy=" + accuracy +
+                ", dodge=" + dodge +
+                ", potionDamage=" + potionDamage +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", pet=" + pet +
+                ", wand=" + wand +
+                ", house='" + house + '\'' +
+                ", knownSpells=[" + spells + "]" +
+                ", potions=" + potions +
+                '}';
+    }
+
     public void defend() {}
-    public void attack() {}
+
 
 }
 

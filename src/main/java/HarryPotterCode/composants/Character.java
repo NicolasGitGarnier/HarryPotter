@@ -19,4 +19,6 @@ public class Character {
         this.accuracy = 5;
         this.dodge = 2;
     }
+
+    public void attack() {}
 }

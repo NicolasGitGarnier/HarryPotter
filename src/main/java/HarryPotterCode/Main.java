@@ -7,6 +7,8 @@ import java.util.Random;
 import java.util.Scanner;
 import java.util.ArrayList;
 
+import static HarryPotterCode.composants.Spell.learnWingardium;
+
 
 public class Main {
     public static void main(String[] args) {
@@ -22,7 +24,6 @@ public class Main {
         Wizard wizard = Wizard.createWizard(20, 5, new Random().nextInt(3) + 3, 5, 5, new Random().nextInt(3) + 3, firstName, lastName, null, wand, SortingHat.assignHouse(), new ArrayList<>(), new ArrayList<>());
         //Start of the aventure
         System.out.println("");
-        System.out.println("");
         System.out.println("________________________________________________________________________________________________");
         System.out.println("  _____                _ _               _               _                 _                  ");
         System.out.println(" |  __ \\              | | |             | |     /\\      | |               | |                 ");
@@ -31,6 +32,7 @@ public class Main {
         System.out.println(" | |  | (_) | |_| | (_| | | (_| | | | (_| |  / ____ \\ (_| |\\ V /  __/ | | | |_| |_| | | |  __/");
         System.out.println(" |_|   \\___/ \\__,_|\\__,_|_|\\__,_|_|  \\__,_| /_/    \\_\\__,_| \\_/ \\___|_| |_|\\__|\\__,_|_|  \\___|");
         System.out.println("________________________________________________________________________________________________");
+        System.out.println("");
         System.out.println("Hello "+ wizard.getFirstName() + " " + wizard.getLastName()+ ".\n"+
                 "Welcome to Poudlard !\n"+
                 "Your wand is made of "+ wand.getCore() + " and is "+wand.getWandSize()+ " cm long.\n"+
@@ -42,10 +44,12 @@ public class Main {
 
         System.out.println("");
         System.out.println("Let's start the adventure !");
-        System.out.println("Bilan des statistiques :" +wizard.toString());
+
         System.out.println("");
 
         System.out.println("*You are now in the first grade at Poudlard. Here is your first class.*\n"+
                 "Teacher : Welcome every one, let's learn our first easy spell : Wingardium Leviosa.");
+        Spell.learnWingardium(wizard.getKnownSpells());
+        System.out.println("Bilan des statistiques :" +wizard.toString());
     }
 }

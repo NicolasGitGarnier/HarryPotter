@@ -10,7 +10,6 @@ public enum Pet {
     public static Pet getPet() {
         Scanner sc = new Scanner(System.in);
         Pet pet = null;
-
         int choix = 0;
         while(pet == null) {
             System.out.println("Which one of these pets would you like to have ? (enter a number). \n" +

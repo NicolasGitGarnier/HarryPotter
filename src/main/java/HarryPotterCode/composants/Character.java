@@ -2,6 +2,7 @@ package HarryPotterCode.composants;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Data
 @NoArgsConstructor
@@ -11,6 +12,8 @@ public class Character {
     private int damage;
     private int accuracy;
     private int dodge;
+    @Setter
+    private String name;
 
     public Character(int health, int defence, int damage, int accuracy, int dodge) {
         this.health = 10;

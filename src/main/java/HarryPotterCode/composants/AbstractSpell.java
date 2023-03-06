@@ -9,5 +9,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class AbstractSpell {
     private String name;
-    private int energyCost;
+    private int succesChance;
+
 }

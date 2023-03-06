@@ -14,7 +14,6 @@ public class Wizard extends Character{
     private int defence;
     private int damage;
     private int accuracy;
-    private int dodge;
     private int potionDamage;
 
     private String firstName;
@@ -26,8 +25,8 @@ public class Wizard extends Character{
     private List<Potion> potions;
 
 
-    public static Wizard createWizard(int health, int defence, int damage, int accuracy, int dodge, int potionDamage, String firstName, String lastName, Pet pet, Wand wand, House house, List<Spell> knownSpells, List<Potion> potions) {
-        Wizard wizard = new Wizard(health, defence, damage, accuracy, dodge, potionDamage, firstName, lastName, pet, wand, house, knownSpells, potions);
+    public static Wizard createWizard(int health, int defence, int damage, int accuracy, int potionDamage, String firstName, String lastName, Pet pet, Wand wand, House house, List<Spell> knownSpells, List<Potion> potions) {
+        Wizard wizard = new Wizard(health, defence, damage, accuracy, potionDamage, firstName, lastName, pet, wand, house, knownSpells, potions);
         if (house == House.SLYTHERIN) {
             wizard.setDamage(damage + 5);
         }
@@ -45,12 +44,12 @@ public class Wizard extends Character{
 
     @Override
     public String toString() {
-        String spells = "";
+        StringBuilder spells = new StringBuilder();
         for (Spell spell : knownSpells) {
-            spells += spell.getName() + ", ";
+            spells.append(spell.getName()).append(", ");
         }
         if (spells.length() > 0) {
-            spells = spells.substring(0, spells.length() - 2);
+            spells = new StringBuilder(spells.substring(0, spells.length() - 2));
         }
         return "Wizard{" +
                 "firstName='" + firstName + '\'' +
@@ -62,7 +61,6 @@ public class Wizard extends Character{
                 ", defence=" + defence +
                 ", damage=" + damage +
                 ", accuracy=" + accuracy +
-                ", dodge=" + dodge +
                 ", potionDamage=" + potionDamage +
                 ", knownSpells=[" + spells + "]" +
                 ", potions=" + potions +

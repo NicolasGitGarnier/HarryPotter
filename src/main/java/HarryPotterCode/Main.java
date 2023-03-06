@@ -21,7 +21,7 @@ public class Main {
         String lastName = sc.nextLine();
         // Setting the data of the character
         Wand wand = new Wand(Wand.getCore(), Wand.getWandSize());
-        Wizard wizard = Wizard.createWizard(20, 5, new Random().nextInt(3) + 3, 5, 5, new Random().nextInt(3) + 3, firstName, lastName, null, wand, SortingHat.assignHouse(), new ArrayList<>(), new ArrayList<>());
+        Wizard wizard = Wizard.createWizard(20, 5, new Random().nextInt(3) + 3, 5, 5, firstName, lastName, null, wand, SortingHat.assignHouse(), new ArrayList<>(), new ArrayList<>());
         //Start of the aventure
         System.out.println("");
         System.out.println("________________________________________________________________________________________________");

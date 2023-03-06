@@ -4,13 +4,14 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 import java.util.List;
+import java.util.Random;
 import java.util.Scanner;
 
 @Data
 @EqualsAndHashCode(callSuper = true)
 public class Spell extends AbstractSpell{
-    public Spell(String name, int energyCost) {
-        super(name, energyCost);
+    public Spell(String name, int succesChance) {
+        super(name, succesChance);
     }
 
     public static void learnWingardium(List<Spell> knownSpells) {
@@ -19,17 +20,15 @@ public class Spell extends AbstractSpell{
         while (spell == null) {
             System.out.println("Enter Wingardium Leviosaaa if you want to learn it :");
             String choice = sc.nextLine();
-            switch (choice) {
-                case "Wingardium Leviosaaa":
-                    Spell wingardiumLeviosa = new Spell("Wingardium Leviosa", 2);
-                    knownSpells.add(wingardiumLeviosa);
-                    spell = choice;
-                    break;
-                default:
-                    System.out.println("You failed to learn that spell.");
-                    break;
+            if ("Wingardium Leviosaaa".equals(choice)) {
+                Spell wingardiumLeviosa = new Spell("Wingardium Leviosa", new Random().nextInt(81) + 20);
+                knownSpells.add(wingardiumLeviosa);
+                spell = choice;
+            } else {
+                System.out.println("You failed to learn that spell.");
             }
         }
         System.out.println("You have succed to learned the spell Wingardium Leviosa");
     }
+
 }

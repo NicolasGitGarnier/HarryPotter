@@ -9,10 +9,10 @@ public class Enemy extends AbstractEnemy{
         return new Enemy(10, 0, 15, 20,  "Détraqueur");
     }
     public static Enemy DoloresOmbrage() {
-        return new Enemy(200, 40, 3, 10,  "Dolores Ombrage");
+        return new Enemy(200, 70, 3, 10,  "Dolores Ombrage");
     }
     public static Enemy Mangemort() {
-        return new Enemy(30, 5, 15, 20,  "Mangemort");
+        return new Enemy(30, 20, 15, 20,  "Mangemort");
     }
     public static Enemy BelatrixLestrange() {
         return new Enemy(50, 40, 30, 25,  "Belatrix Lestrange");

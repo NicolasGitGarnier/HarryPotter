@@ -11,6 +11,7 @@ public class Character {
     private int defence;
     private int damage;
     private int accuracy;
+    private int potionDamage;
 
     @Setter
     private String name;
@@ -22,5 +23,16 @@ public class Character {
         this.accuracy = 5;
     }
 
-    public void attack() {}
+    public int attack(Character target) {
+        int damage;
+        if (target instanceof Enemy) {
+            // Wizard attack enemy
+            damage = (this.damage + this.potionDamage) - (target.getDefence() * (this.damage + this.potionDamage) / 100);
+        } else {
+            // Enemy attack wizard
+            damage = target.getDamage() - (this.defence * target.getDamage() / 100);
+        }
+        target.setHealth(target.getHealth() - damage);
+        return damage;
+    }
 }

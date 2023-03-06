@@ -6,14 +6,14 @@ public class Boss extends AbstractEnemy{
         setName(name);
     }
     public static Boss Throll() {
-        return new Boss(20, 0, 2, 1 , "Throll");
+        return new Boss(15, 0, 2, 1 , "Throll");
     }
 
     public static Boss Basilic() {
         return new Boss(15, 5, 5, 5,  "Basilic");
     }
     public static Boss Voldemort() {
-        return new Boss(70, 15, 30, 30,  "Voldemort");
+        return new Boss(70, 30, 30, 30,  "Voldemort");
     }
 
 }

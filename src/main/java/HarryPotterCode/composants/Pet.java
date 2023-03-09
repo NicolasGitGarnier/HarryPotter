@@ -12,7 +12,7 @@ public enum Pet {
         Pet pet = null;
         int choix = 0;
         while(pet == null) {
-            System.out.println("Which one of these pets would you like to have ? (enter a number). \n" +
+            System.out.println("* Which one of these pets would you like to have ? (enter a number). *\n" +
                     "1. Owl \n" +
                     "2. Rat \n" +
                     "3. Cat \n" +
@@ -21,10 +21,10 @@ public enum Pet {
             if (sc.hasNextInt()) {
                 choix = sc.nextInt();
                 if (choix < 1 || choix > 4) {
-                    System.out.println("Error. Please enter a number between 1 and 4.");
+                    System.out.println("* Error. Please enter a number between 1 and 4. *");
                 }
             } else {
-                System.out.println("Error. Please enter a number between 1 and 4.");
+                System.out.println("* Error. Please enter a number between 1 and 4. *");
                 sc.next();
             }
             String choice = "";

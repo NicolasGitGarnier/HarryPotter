@@ -2,18 +2,18 @@ package HarryPotterCode;
 
 import HarryPotterCode.composants.*;
 
-import java.lang.Character;
 import java.util.Random;
 import java.util.Scanner;
 import java.util.ArrayList;
 
-import static HarryPotterCode.composants.Spell.learnWingardium;
 
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Welcome into Harry Potter's World... First of all, who are you ?");
+        System.out.println("");
+        System.out.println("");
+        System.out.println("*---* Welcome into Harry Potter's World... First of all, who are you ? *---*");
         // Creating the main character
         System.out.print("Enter your first name : ");
         String firstName = sc.nextLine();
@@ -23,7 +23,6 @@ public class Main {
         Wand wand = new Wand(Wand.getCore(), Wand.getWandSize());
         Wizard wizard = Wizard.createWizard(20, 5, new Random().nextInt(3) + 3, 5, 5, firstName, lastName, null, wand, SortingHat.assignHouse(), new ArrayList<>(), new ArrayList<>());
         //Start of the aventure
-        System.out.println("");
         System.out.println("________________________________________________________________________________________________");
         System.out.println("  _____                _ _               _               _                 _                  ");
         System.out.println(" |  __ \\              | | |             | |     /\\      | |               | |                 ");
@@ -33,23 +32,25 @@ public class Main {
         System.out.println(" |_|   \\___/ \\__,_|\\__,_|_|\\__,_|_|  \\__,_| /_/    \\_\\__,_| \\_/ \\___|_| |_|\\__|\\__,_|_|  \\___|");
         System.out.println("________________________________________________________________________________________________");
         System.out.println("");
-        System.out.println("Hello "+ wizard.getFirstName() + " " + wizard.getLastName()+ ".\n"+
-                "Welcome to Poudlard !\n"+
-                "Your wand is made of "+ wand.getCore() + " and is "+wand.getWandSize()+ " cm long.\n"+
-                "You are in the " + wizard.getHouse()+ " house.");
+        System.out.println("* Hello "+ wizard.getFirstName() + " " + wizard.getLastName()+ ". *\n"+
+                "* Welcome to Poudlard ! *\n"+
+                "* Your wand is made of "+ wand.getCore() + " and is "+wand.getWandSize()+ " cm long. *\n"+
+                "* You are in the " + wizard.getHouse()+ " house. *");
+        System.out.println("");
         //Choose your Pet
         Pet pet = Pet.getPet();
         wizard.setPet(pet);
-        System.out.println("Great now you own a " + pet.name().toLowerCase() + ".");
-
+        System.out.println("* Great now you own a " + pet.name().toLowerCase() + ". *");
         System.out.println("");
-        System.out.println("Let's start the adventure !");
-
+        System.out.println(wizard.Stats());
         System.out.println("");
-
-        System.out.println("*You are now in the first grade at Poudlard. Here is your first class.*\n"+
-                "Teacher : Welcome every one, let's learn our first easy spell : Wingardium Leviosa.");
+        Thread.sleep(1000);
+        System.out.println("* Let's start the adventure ! *");
+        System.out.println("");
+        System.out.println("* You are now in the first grade at Poudlard. Here is your first class. *\n"+
+                "- Teacher - Welcome to class every one, let's learn your first easy spell : Wingardium Leviosa.");
         Spell.learnWingardium(wizard.getKnownSpells());
-        System.out.println("Bilan des statistiques :" +wizard.toString());
+        System.out.println("* Bilan des statistiques :" +wizard.toString()+" *");
+
     }
 }

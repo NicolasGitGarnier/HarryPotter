@@ -21,14 +21,14 @@ public class Spell extends AbstractSpell{
             System.out.println("Enter Wingardium Leviosaaa if you want to learn it :");
             String choice = sc.nextLine();
             if ("Wingardium Leviosaaa".equals(choice)) {
-                Spell wingardiumLeviosa = new Spell("Wingardium Leviosa", new Random().nextInt(81) + 20);
+                Spell wingardiumLeviosa = new Spell("Wingardium Leviosa", new Random().nextInt(98) + 3); /* random number between 97 and 100 */
                 knownSpells.add(wingardiumLeviosa);
                 spell = choice;
             } else {
-                System.out.println("You failed to learn that spell.");
+                System.out.println("* You failed to learn that spell. *");
             }
         }
-        System.out.println("You have succed to learned the spell Wingardium Leviosa");
+        System.out.println("* You have succed to learned the spell Wingardium Leviosa *");
     }
 
 }

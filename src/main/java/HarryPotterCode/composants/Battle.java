@@ -7,8 +7,8 @@ import static HarryPotterCode.composants.Wizard.levelUp;
 public class Battle {
     Scanner sc = new Scanner(System.in);
 
-    /*private final Wizard wizard;
-    private final Enemy enemy;*/
+    private Wizard wizard;
+    private Enemy enemy;
     private boolean isFinished = false; //True when the battle is finished
 
     private void isDead(Wizard wizard, AbstractEnemy enemy){

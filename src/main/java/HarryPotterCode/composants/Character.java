@@ -27,7 +27,8 @@ public class Character {
         int damage;
         if (target instanceof Enemy || target instanceof Boss) {
             // Wizard attack enemy
-            damage = (this.damage + this.potionBonus) - (( target.getDefence() / 100 ) * this.damage + this.potionBonus);
+            //Defence is a % reduction damage
+            damage = (this.damage + this.potionBonus) - (( target.getDefence() / 100 ) * (this.damage + this.potionBonus));
         } else {
             // Enemy attack wizard
             damage = this.damage - (target.getDefence() * ( target.getDamage() / 100 ));

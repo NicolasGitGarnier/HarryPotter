@@ -21,7 +21,8 @@ public class Spell extends AbstractSpell{
             System.out.println("Enter Wingardium Leviosaaa if you want to learn it :");
             String choice = sc.nextLine();
             if ("Wingardium Leviosaaa".equals(choice)) {
-                Spell wingardiumLeviosa = new Spell("Wingardium Leviosa", new Random().nextInt(98) + 3); /* random number between 97 and 100 */
+                //SuccesChance = 90. Wizard accuracy = 5. So 95% chance of succed to cast a spell.
+                Spell wingardiumLeviosa = new Spell("Wingardium Leviosa", 90);
                 knownSpells.add(wingardiumLeviosa);
                 spell = choice;
             } else {
@@ -29,6 +30,14 @@ public class Spell extends AbstractSpell{
             }
         }
         System.out.println("* You have succed to learned the spell Wingardium Leviosa *");
+    }
+
+    public void castSpell(Spell spell, Wizard wizard){
+        int SpellCastChance = spell.getSuccesChance() + wizard.getAccuracy();
+        Random random = new Random().nextInt(2) + SpellCastChance ;
+        if (SpellCastChance < random){
+            //
+        }
     }
 
 }

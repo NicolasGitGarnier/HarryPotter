@@ -52,5 +52,7 @@ public class Main {
         Spell.learnWingardium(wizard.getKnownSpells());
         System.out.println("* Bilan des statistiques :" +wizard.toString()+" *");
 
+        //Niveau 1
+
     }
 }

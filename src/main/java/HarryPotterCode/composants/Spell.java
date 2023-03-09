@@ -32,7 +32,7 @@ public class Spell extends AbstractSpell{
         System.out.println("* You have succed to learned the spell Wingardium Leviosa *");
     }
 
-    public void castSpell(Spell spell, Wizard wizard){
+    public static void castSpell(Spell spell, Wizard wizard){
         int spellCastChance = spell.getSuccesChance() + wizard.getAccuracy(); // Calculating the accuracy + chance cast of the spell
         int random = new Random().nextInt(spellCastChance); // Calculate the chance to succed the casting of the spell
         boolean castSucces = false;

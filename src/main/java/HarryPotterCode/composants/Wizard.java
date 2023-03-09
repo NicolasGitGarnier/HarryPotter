@@ -53,7 +53,7 @@ public class Wizard extends Character{
         }
         return wizard;
     }
-    public Spell chooseSpell(List<Spell> knownSpells) {
+    public Spell chooseSpell(List<Spell> knownSpells) { //Choose a spell use in battle loop
         Scanner sc = new Scanner(System.in);
         System.out.println("* Choose a spell to cast: (Enter a number) *");
         int index = 1; // Start at 1, so the choices start with 1. and not 0.

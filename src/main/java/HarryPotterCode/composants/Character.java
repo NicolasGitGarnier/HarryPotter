@@ -23,18 +23,23 @@ public class Character {
         this.accuracy = accuracy;
     }
 
-    public int attack(Character target) {
-        int damage;
-        if (target instanceof Enemy || target instanceof Boss) {
-            // Wizard attack enemy
-            //Defence is a % reduction damage
-            damage = (this.damage + this.potionBonus) - (( target.getDefence() / 100 ) * (this.damage + this.potionBonus));
+    public int attack(Character target, boolean castSucces) {
+        if (castSucces){
+            int damage;
+            if (target instanceof Enemy || target instanceof Boss) {
+                // Wizard attack enemy
+                //Defence is a % reduction damage
+                damage = (this.damage + this.potionBonus) - (( target.getDefence() / 100 ) * (this.damage + this.potionBonus));
+            } else {
+                // Enemy attack wizard
+                damage = this.damage - (target.getDefence() * ( target.getDamage() / 100 ));
+            }
+            target.setHealth(target.getHealth() - damage);
+            return damage;
         } else {
-            // Enemy attack wizard
-            damage = this.damage - (target.getDefence() * ( target.getDamage() / 100 ));
+            System.out.println("* You failed to cast the spell !");
+            return 0;
         }
-        target.setHealth(target.getHealth() - damage);
-        return damage;
     }
 
 }

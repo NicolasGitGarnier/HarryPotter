@@ -35,7 +35,9 @@ public class Spell extends AbstractSpell{
     public void castSpell(Spell spell, Wizard wizard){
         int spellCastChance = spell.getSuccesChance() + wizard.getAccuracy(); // Calculating the accuracy + chance cast of the spell
         int random = new Random().nextInt(spellCastChance); // Calculate the chance to succed the casting of the spell
+        boolean castSucces = false;
         if (random <= spellCastChance){
+            castSucces = true;
             System.out.println("* You succed to cast the spell " + spell.getName() +" !");
         }else{
             System.out.println("* You failed to cast the spell " + spell.getName() +" !");

@@ -33,8 +33,8 @@ public class Spell extends AbstractSpell{
     }
 
     public static boolean castSpell(Spell spell, Wizard wizard){
-        int spellCastChance = spell.getSuccesChance() + wizard.getAccuracy(); // Calculating the accuracy + chance cast of the spell
-        int random = new Random().nextInt(spellCastChance); // Calculate the chance to succed the casting of the spell
+        int spellCastChance = spell.getSuccesChance() + wizard.getAccuracy(); // Calculating the accuracy + chance cast of the spell.
+        int random = new Random().nextInt(spellCastChance); // Calculate the chance to succed the casting of the spell.
         boolean castSucces = false;
         if (random <= spellCastChance){
             castSucces = true;

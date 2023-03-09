@@ -53,15 +53,15 @@ public class Wizard extends Character{
         }
         return wizard;
     }
-    public Spell chooseSpell(List<Spell> knownSpells) { //Choose a spell use in battle loop
+    public Spell chooseSpell(List<Spell> knownSpells) { //Choose a spell use in battle loop.
         Scanner sc = new Scanner(System.in);
         System.out.println("* Choose a spell to cast: (Enter a number) *");
         int index = 1; // Start at 1, so the choices start with 1. and not 0.
-        for (Spell spell : knownSpells) { //Choice like this : 1. Wingardium Leviosa
+        for (Spell spell : knownSpells) { //Choice like this : 1. Wingardium Leviosa.
             System.out.println(index++ + ". " + spell.getName());
         }
-        int choice = sc.nextInt();//Look for a number as an answer
-        return knownSpells.get(choice - 1);// -1 to select the right choice according to the user because List start at indices 0
+        int choice = sc.nextInt();//Look for a number as an answer.
+        return knownSpells.get(choice - 1);// -1 to select the right choice according to the user because List start at indices 0.
     }
     public static void levelUp(Wizard wizard) {
         Scanner sc = new Scanner(System.in);
@@ -97,7 +97,7 @@ public class Wizard extends Character{
     }
 
     @Override
-    public String toString() {
+    public String toString() {// For me, to have a return of the data of my wizard.
         StringBuilder spells = new StringBuilder();
         for (Spell spell : knownSpells) {
             spells.append(spell.getName()).append(", ");

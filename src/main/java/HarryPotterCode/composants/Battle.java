@@ -32,8 +32,8 @@ public class Battle {
     public void start() throws InterruptedException {
         while(!isFinished){ //To define if the battle is finished or not. It is finish when the wizard or enemy is dead.
             //Player turn.
-            System.out.println(">--------------------<\n" + "Your health :" + wizard.getHealth());
-            System.out.println("Enemy health : " + enemy.getHealth() + "\n" + ">--------------------<");
+            System.out.println("***\n" + "Your health :" + wizard.getHealth());
+            System.out.println(enemy.getName() + " health : " + enemy.getHealth() + "\n" + "***");
             System.out.println("* ----- Your turn ----- *");
             Thread.sleep(2000);
             System.out.println("Choose your action : (Enter a number)\n" +
@@ -50,7 +50,7 @@ public class Battle {
                         System.out.println(enemy.getName() + " -" + wizard.damageCalc(enemy) + " damage");
                         Thread.sleep(1000);
                         System.out.println("***\n" + "Your health :" + wizard.getHealth());
-                        System.out.println("Enemy health : " + enemy.getHealth() + "\n" + "***");
+                        System.out.println(enemy.getName() + " health : " + enemy.getHealth() + "\n" + "***");
                         Thread.sleep(2000);
                     }
                 }
@@ -66,7 +66,7 @@ public class Battle {
                 System.out.println(wizard.getFirstName() + " " + wizard.getLastName() + " -" + enemy.damageCalc(wizard) + " damage");
                 Thread.sleep(1000);
                 System.out.println("***\n" + "Your health : " + wizard.getHealth());
-                System.out.println("Enemy health : " + enemy.getHealth() + "\n" + "***");
+                System.out.println(enemy.getName() + " health : " + enemy.getHealth() + "\n" + "***");
                 Thread.sleep(2000);
                 isDead(wizard, enemy);//Check if battle is finished.
             }

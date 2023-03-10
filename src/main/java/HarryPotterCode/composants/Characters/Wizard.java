@@ -41,8 +41,8 @@ public class Wizard extends Character {
         setPotionBonus(potionBonus);
     }
 
-    public static Wizard createWizard(int health, int defence, int damage, int accuracy, int potionDamage, String firstName, String lastName, Pet pet, Wand wand, House house, List<Spell> knownSpells, List<Potion> potions) {
-        Wizard wizard = new Wizard(health, defence, damage, accuracy, potionDamage, firstName, lastName, pet, wand, house, knownSpells, potions);
+    public static Wizard createWizard(int health, int defence, int damage, int accuracy, int potionBonus, String firstName, String lastName, Pet pet, Wand wand, House house, List<Spell> knownSpells, List<Potion> potions) {
+        Wizard wizard = new Wizard(health, defence, damage, accuracy, potionBonus, firstName, lastName, pet, wand, house, knownSpells, potions);
         if (house == House.SLYTHERIN) {
             wizard.setDamage(damage + 5);
         }
@@ -53,7 +53,19 @@ public class Wizard extends Character {
             wizard.setAccuracy(accuracy + 5);
         }
         if (house == House.HUFFLEPUFF) {
-            wizard.setPotionBonus(potionDamage + 5);
+            wizard.setPotionBonus(potionBonus + 5);
+        }
+        if (pet == Pet.OWL) {
+            wizard.setHealth(health + 10);
+        }
+        if (pet == Pet.RAT) {
+            wizard.setAccuracy(accuracy + 5);
+        }
+        if (pet == Pet.CAT) {
+            wizard.setDamage(damage + 5);
+        }
+        if (pet == Pet.TOAD) {
+            wizard.setPotionBonus(potionBonus + 5);
         }
         return wizard;
     }

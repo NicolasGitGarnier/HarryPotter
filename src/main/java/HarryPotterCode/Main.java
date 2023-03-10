@@ -42,10 +42,10 @@ public class Main {
 
 
         // --------------- Introduction --------------- //
-        System.out.println("* Hello "+ wizard.getFirstName() + " " + wizard.getLastName()+ ". *\n"+
-                "* Welcome to Poudlard ! *\n"+
-                "* Your wand is made of "+ wand.getCore() + " and is "+wand.getWandSize()+ " cm long. *\n"+
-                "* You are in the " + wizard.getHouse()+ " house. *");
+        System.out.println("* Hello "+ wizard.getFirstName() + " " + wizard.getLastName()+ ". *\n" +
+                "* Welcome to Poudlard ! *\n" +
+                "* You are in the " + wizard.getHouse()+ " house. * \n" +
+                "* Your wand is made of "+ wand.getCore() + " and is "+wand.getWandSize()+ " cm long. *");
         Thread.sleep(4500);
         System.out.println("");
         //Choose your Pet

@@ -57,7 +57,7 @@ public class Wizard extends Character {
         }
         return wizard;
     }
-    public void attack(Character target){
+    public void attack(Character target) throws InterruptedException {
         Battle battle = new Battle(this, (Enemy) target);
         battle.start();
     }
@@ -124,36 +124,11 @@ public class Wizard extends Character {
     }
 
     // --------------- Stats --------------- //
-    @Override
-    public String toString() {// For me, to have a return of the data of my wizard.
-        StringBuilder spells = new StringBuilder();
-        for (Spell spell : knownSpells) {
-            spells.append(spell.getName()).append(", ");
-        }
-        if (spells.length() > 0) {
-            spells = new StringBuilder(spells.substring(0, spells.length() - 2));
-        }
-        return "Wizard{" +
-                "firstName = " + firstName +
-                ", lastName = " + lastName +
-                ", wand = " + wand +
-                ", house = " + house  +
-                ", pet = " + pet +
-                ", health = " + getHealth() +
-                ", defence = " + getDefence() +
-                ", damage = " + getDamage() +
-                ", accuracy = " + getAccuracy() +
-                ", potionBonus = " + getPotionBonus() +
-                ", knownSpells = " + spells +
-                ", potions = " + potions +
-                '}';
-    }
-
     public String Stats() {
         StringBuilder spells = new StringBuilder();
         return  "*--------Your Stats--------*" +
                 "\n" +
-                " Name : " + getFirstName() + " Last Name : " + getLastName() + "\n" +
+                " Name and Last Name : " + getFirstName() + " " + getLastName() + "\n" +
                 " Health : " + getHealth() + "\n" +
                 " Defence : " + getDefence() + "\n" +
                 " Damage : " + getDamage() + "\n" +

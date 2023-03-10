@@ -14,7 +14,7 @@ public class Level1 {
         this.wizard = wizard;
     }
 
-    public static void start(String[] args) {
+    public static void start(String[] args) throws InterruptedException {
         Enemy troll = Enemy.Troll();
         wizard.attack(troll);
     }

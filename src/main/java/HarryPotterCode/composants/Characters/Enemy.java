@@ -6,7 +6,7 @@ public class Enemy extends AbstractEnemy {
         setName(name);
     }
     public static Enemy Troll() {
-        return new Enemy(15, 0, 2, 1 , "Troll");
+        return new Enemy(25, 0, 2, 1 , "Troll");
     }
 
     public static Enemy Basilic() {

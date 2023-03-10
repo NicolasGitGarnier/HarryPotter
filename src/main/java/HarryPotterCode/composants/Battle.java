@@ -11,6 +11,7 @@ import HarryPotterCode.composants.Spells.Spell;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.SneakyThrows;
 
 @Data
 @AllArgsConstructor
@@ -27,11 +28,15 @@ public class Battle {
         this.wizard = wizard;
         this.enemy = enemy;
     }
-    public void start(){
+
+    public void start() throws InterruptedException {
         while(!isFinished){ //To define if the battle is finished or not. It is finish when the wizard or enemy is dead.
             //Player turn.
+            System.out.println(">--------------------<\n" + "Your health :" + wizard.getHealth());
+            System.out.println("Enemy health : " + enemy.getHealth() + "\n" + ">--------------------<");
             System.out.println("* ----- Your turn ----- *");
-            System.out.println("Choose your action :\n" +
+            Thread.sleep(2000);
+            System.out.println("Choose your action : (Enter a number)\n" +
                     "1. Cast a Spell\n" +
                     "2. Use a potion");
             String choice = sc.nextLine();
@@ -42,6 +47,11 @@ public class Battle {
                     boolean castSucces = Spell.castSpell(spell, wizard);// We defined if the wizard succed to cast his spell.
                     if(castSucces){// If he succes, then he attack.
                         wizard.damageCalc(enemy);
+                        System.out.println(enemy.getName() + " -" + wizard.damageCalc(enemy) + " damage");
+                        Thread.sleep(1000);
+                        System.out.println("***\n" + "Your health :" + wizard.getHealth());
+                        System.out.println("Enemy health : " + enemy.getHealth() + "\n" + "***");
+                        Thread.sleep(2000);
                     }
                 }
                 case "2" -> {
@@ -53,6 +63,11 @@ public class Battle {
             if (!isFinished) {
                 System.out.println("* ----- Enemy turn  ------ *");
                 enemy.damageCalc(wizard);
+                System.out.println(wizard.getFirstName() + " " + wizard.getLastName() + " -" + enemy.damageCalc(wizard) + " damage");
+                Thread.sleep(1000);
+                System.out.println("***\n" + "Your health : " + wizard.getHealth());
+                System.out.println("Enemy health : " + enemy.getHealth() + "\n" + "***");
+                Thread.sleep(2000);
                 isDead(wizard, enemy);//Check if battle is finished.
             }
 

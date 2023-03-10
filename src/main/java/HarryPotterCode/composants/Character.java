@@ -23,9 +23,10 @@ public class Character {
         this.accuracy = accuracy;
     }
 
-    public int attack(Character target) {
+
+    public int damageCalc(Character target) {
         int damage;
-        if (target instanceof Enemy || target instanceof Boss) {
+        if (target instanceof Enemy) {
             // Wizard attack enemy.
             //Defence is a % reduction damage.
             damage = (this.damage + this.potionBonus) - ((target.getDefence() / 100) * (this.damage + this.potionBonus));

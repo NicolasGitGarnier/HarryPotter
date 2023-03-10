@@ -1,15 +1,16 @@
 package HarryPotterCode;
 
 import HarryPotterCode.composants.*;
+import lombok.Getter;
 
 import java.util.Random;
 import java.util.Scanner;
 import java.util.ArrayList;
 
-
-
 public class Main {
     public static void main(String[] args) throws InterruptedException {
+
+        // --------------- Initialisation character --------------- //
         Scanner sc = new Scanner(System.in);
         System.out.println("");
         System.out.println("");
@@ -22,7 +23,9 @@ public class Main {
         // Setting the data of the character
         Wand wand = new Wand(Wand.getCore(), Wand.getWandSize());
         Wizard wizard = Wizard.createWizard(20, 5, new Random().nextInt(3) + 3, 5, 5, firstName, lastName, null, wand, SortingHat.assignHouse(), new ArrayList<>(), new ArrayList<>());
-        //Start of the aventure
+
+
+        // --------------- Start of the adventure --------------- //
         System.out.println("________________________________________________________________________________________________");
         System.out.println("  _____                _ _               _               _                 _                  ");
         System.out.println(" |  __ \\              | | |             | |     /\\      | |               | |                 ");
@@ -32,6 +35,9 @@ public class Main {
         System.out.println(" |_|   \\___/ \\__,_|\\__,_|_|\\__,_|_|  \\__,_| /_/    \\_\\__,_| \\_/ \\___|_| |_|\\__|\\__,_|_|  \\___|");
         System.out.println("________________________________________________________________________________________________");
         System.out.println("");
+
+
+        // --------------- Introduction --------------- //
         System.out.println("* Hello "+ wizard.getFirstName() + " " + wizard.getLastName()+ ". *\n"+
                 "* Welcome to Poudlard ! *\n"+
                 "* Your wand is made of "+ wand.getCore() + " and is "+wand.getWandSize()+ " cm long. *\n"+
@@ -47,12 +53,23 @@ public class Main {
         Thread.sleep(1000);
         System.out.println("* Let's start the adventure ! *");
         System.out.println("");
+
+
+        // --------------- First year --------------- //
         System.out.println("* You are now in the first grade at Poudlard. Here is your first class. *\n"+
                 "- Teacher - Welcome to class every one, let's learn your first easy spell : Wingardium Leviosa.");
         Spell.learnWingardium(wizard.getKnownSpells());
         System.out.println("* Bilan des statistiques :" +wizard.toString()+" *");
+        System.out.println("* Your know have a need to pee. So you go to the bathroom of the school next to the Dungeon... *");
+        Thread.sleep(1000);
+        System.out.println("* ...");
+        Thread.sleep(1000);
 
-        //Niveau 1
 
+        // --------------- Level 1 --------------- //
+        System.out.println("- Troll - Rooooarrrrghh !!!");
+        System.out.println("* You need to fight him ! The battle start... *");
+        Level1 level1 = new Level1(wizard);
+        Level1.start(args);
     }
 }

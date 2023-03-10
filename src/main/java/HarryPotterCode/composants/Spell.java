@@ -14,6 +14,7 @@ public class Spell extends AbstractSpell{
         super(name, succesChance);
     }
 
+    // --------------- LearnSpells --------------- //
     public static void learnWingardium(List<Spell> knownSpells) {
         Scanner sc = new Scanner(System.in);
         String spell = null;
@@ -32,15 +33,16 @@ public class Spell extends AbstractSpell{
         System.out.println("* You have succed to learned the spell Wingardium Leviosa *");
     }
 
+    // --------------- Spell Mechanic(s) --------------- //
     public static boolean castSpell(Spell spell, Wizard wizard){
         int spellCastChance = spell.getSuccesChance() + wizard.getAccuracy(); // Calculating the accuracy + chance cast of the spell.
         int random = new Random().nextInt(spellCastChance); // Calculate the chance to succed the casting of the spell.
         boolean castSucces = false;
         if (random <= spellCastChance){
             castSucces = true;
-            System.out.println("* You succed to cast the spell " + spell.getName() +" !");
+            System.out.println("* You succed to cast the spell " + spell.getName() +" ! (Your score (if above -> fail) : " + random + "/" + spellCastChance + ".");
         }else{
-            System.out.println("* You failed to cast the spell " + spell.getName() +" !");
+            System.out.println("* You failed to cast the spell " + spell.getName() +" ! (Your score (if above -> fail) : " + random + "/" + spellCastChance + ".");
         }
         return castSucces;
     }

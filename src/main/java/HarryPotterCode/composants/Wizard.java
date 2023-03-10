@@ -53,6 +53,12 @@ public class Wizard extends Character{
         }
         return wizard;
     }
+    public void attack(Character target){
+        Battle battle = new Battle(this, (Enemy) target);
+        battle.start();
+    }
+
+    // --------------- Spell --------------- //
     public Spell chooseSpell(List<Spell> knownSpells) { //Choose a spell use in battle loop.
         Scanner sc = new Scanner(System.in);
         System.out.println("* Choose a spell to cast: (Enter a number) *");
@@ -63,6 +69,19 @@ public class Wizard extends Character{
         int choice = sc.nextInt();//Look for a number as an answer.
         return knownSpells.get(choice - 1);// -1 to select the right choice according to the user because List start at indices 0.
     }
+
+    // --------------- Potion --------------- //
+    public Potion choosePotion(List<Potion> potions) { //Choose a potion use in battle loop.
+        Scanner sc = new Scanner(System.in);
+        System.out.println("* Choose a potion to use: (Enter a number) *");
+        int index = 1; // Start at 1, so the choices start with 1. and not 0.
+        for (Potion potion : potions) { //Choice like this : 1. PotionName
+            System.out.println(index++ + ". " + potion.getName());
+        }
+        int choice = sc.nextInt();//Look for a number as an answer.
+        return potions.get(choice - 1);// -1 to select the right choice according to the user because List start at indices 0.
+    }
+    // --------------- Levels --------------- //
     public static void levelUp(Wizard wizard) {
         Scanner sc = new Scanner(System.in);
         System.out.println("* Congrat's, choose the stat you want to level up : (Enter a number) *");
@@ -76,26 +95,31 @@ public class Wizard extends Character{
                 int newHealth = wizard.getHealth() + 10;
                 wizard.setHealth(newHealth);
                 System.out.println("* Your health has been increased to " + newHealth + ". *");
+                System.out.println(wizard.Stats());
             }
             case 2 -> {
                 int newDamage = wizard.getDamage() + 5;
                 wizard.setDamage(newDamage);
                 System.out.println("* Your damage has been increased to " + newDamage + ". *");
+                System.out.println(wizard.Stats());
             }
             case 3 -> {
                 int newDefense = wizard.getDefence() + 5;
                 wizard.setDefence(newDefense);
                 System.out.println("* Your defense has been increased to " + newDefense + ". *");
+                System.out.println(wizard.Stats());
             }
             case 4 -> {
                 int newPotionBonus = wizard.getPotionBonus() + 5;
                 wizard.setPotionBonus(newPotionBonus);
                 System.out.println("* Your potion bonus has been increased to " + newPotionBonus + ". *");
+                System.out.println(wizard.Stats());
             }
             default -> System.out.println("* Invalid choice. Enter a number. *");
         }
     }
 
+    // --------------- Stats --------------- //
     @Override
     public String toString() {// For me, to have a return of the data of my wizard.
         StringBuilder spells = new StringBuilder();

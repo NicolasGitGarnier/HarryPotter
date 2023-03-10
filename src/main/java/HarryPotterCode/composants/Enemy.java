@@ -5,6 +5,16 @@ public class Enemy extends AbstractEnemy{
         super(health, defence, damage, accuracy);
         setName(name);
     }
+    public static Enemy Troll() {
+        return new Enemy(15, 0, 2, 1 , "Troll");
+    }
+
+    public static Enemy Basilic() {
+        return new Enemy(15, 5, 5, 5,  "Basilic");
+    }
+    public static Enemy Voldemort() {
+        return new Enemy(70, 30, 30, 30,  "Voldemort");
+    }
     public static Enemy Détraqueur() {
         return new Enemy(10, 0, 15, 20,  "Détraqueur");
     }

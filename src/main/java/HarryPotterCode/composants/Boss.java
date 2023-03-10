@@ -1,12 +1,12 @@
-package HarryPotterCode.composants;
+/*package HarryPotterCode.composants;
 
 public class Boss extends AbstractEnemy{
     private Boss(int health, int defence, int damage, int accuracy, String name) {
         super(health, defence, damage, accuracy);
         setName(name);
     }
-    public static Boss Throll() {
-        return new Boss(15, 0, 2, 1 , "Throll");
+    public static Boss Troll() {
+        return new Boss(15, 0, 2, 1 , "Troll");
     }
 
     public static Boss Basilic() {
@@ -17,3 +17,4 @@ public class Boss extends AbstractEnemy{
     }
 
 }
+*/

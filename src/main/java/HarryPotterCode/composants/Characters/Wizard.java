@@ -1,17 +1,21 @@
-package HarryPotterCode.composants;
+package HarryPotterCode.composants.Characters;
 import java.util.List;
 import java.util.Scanner;
 
+import HarryPotterCode.composants.*;
+import HarryPotterCode.composants.Potions.Potion;
+import HarryPotterCode.composants.Spells.Spell;
+import HarryPotterCode.composants.WandStuff.Wand;
+import HarryPotterCode.composants.Others.House;
+import HarryPotterCode.composants.Others.Pet;
 import lombok.*;
-
-import static HarryPotterCode.composants.Wand.getCore;
 
 @Getter
 @Setter
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor
-public class Wizard extends Character{
+public class Wizard extends Character {
 
     private String firstName;
     private String lastName;

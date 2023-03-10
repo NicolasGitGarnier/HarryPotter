@@ -1,6 +1,8 @@
-package HarryPotterCode.composants;
+package HarryPotterCode.composants.WandStuff;
 
 import java.util.Random;
+
+import HarryPotterCode.composants.WandStuff.Core;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

@@ -1,7 +1,11 @@
 package HarryPotterCode;
 
-import HarryPotterCode.composants.*;
-import lombok.Getter;
+import HarryPotterCode.composants.Characters.Wizard;
+import HarryPotterCode.composants.Levels.Level1;
+import HarryPotterCode.composants.Others.SortingHat;
+import HarryPotterCode.composants.Spells.Spell;
+import HarryPotterCode.composants.WandStuff.Wand;
+import HarryPotterCode.composants.Others.Pet;
 
 import java.util.Random;
 import java.util.Scanner;
@@ -61,13 +65,14 @@ public class Main {
         Spell.learnWingardium(wizard.getKnownSpells());
         System.out.println("* Bilan des statistiques :" +wizard.toString()+" *");
         System.out.println("* Your know have a need to pee. So you go to the bathroom of the school next to the Dungeon... *");
-        Thread.sleep(1000);
-        System.out.println("* ...");
+        Thread.sleep(2500);
+        System.out.println(" . . . ");
         Thread.sleep(1000);
 
 
         // --------------- Level 1 --------------- //
         System.out.println("- Troll - Rooooarrrrghh !!!");
+        Thread.sleep(500);
         System.out.println("* You need to fight him ! The battle start... *");
         Level1 level1 = new Level1(wizard);
         Level1.start(args);

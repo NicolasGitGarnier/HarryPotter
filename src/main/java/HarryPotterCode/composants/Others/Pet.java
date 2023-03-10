@@ -1,4 +1,4 @@
-package HarryPotterCode.composants;
+package HarryPotterCode.composants.Others;
 import java.util.Scanner;
 public enum Pet {
     OWL,

@@ -1,6 +1,6 @@
-package HarryPotterCode.composants;
+package HarryPotterCode.composants.Characters;
 
-public class Enemy extends AbstractEnemy{
+public class Enemy extends AbstractEnemy {
     private Enemy(int health, int defence, int damage, int accuracy, String name) {
         super(health, defence, damage, accuracy);
         setName(name);

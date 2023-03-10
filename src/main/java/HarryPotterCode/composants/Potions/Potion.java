@@ -1,4 +1,4 @@
-package HarryPotterCode.composants;
+package HarryPotterCode.composants.Potions;
 
 import lombok.Data;
 

@@ -1,4 +1,4 @@
-package HarryPotterCode.composants;
+package HarryPotterCode.composants.Others;
 
 public enum House {
     HUFFLEPUFF,

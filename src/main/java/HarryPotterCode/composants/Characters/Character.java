@@ -1,4 +1,4 @@
-package HarryPotterCode.composants;
+package HarryPotterCode.composants.Characters;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;

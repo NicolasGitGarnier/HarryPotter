@@ -2,8 +2,12 @@ package HarryPotterCode.composants;
 
 import java.util.Scanner;
 
-import static HarryPotterCode.composants.Wizard.levelUp;
+import static HarryPotterCode.composants.Characters.Wizard.levelUp;
 
+import HarryPotterCode.composants.Characters.AbstractEnemy;
+import HarryPotterCode.composants.Characters.Enemy;
+import HarryPotterCode.composants.Characters.Wizard;
+import HarryPotterCode.composants.Spells.Spell;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

@@ -1,5 +1,6 @@
-package HarryPotterCode.composants;
+package HarryPotterCode.composants.Spells;
 
+import HarryPotterCode.composants.Characters.Wizard;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -9,7 +10,7 @@ import java.util.Scanner;
 
 @Data
 @EqualsAndHashCode(callSuper = true)
-public class Spell extends AbstractSpell{
+public class Spell extends AbstractSpell {
     public Spell(String name, int succesChance) {
         super(name, succesChance);
     }

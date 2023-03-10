@@ -1,4 +1,4 @@
-package HarryPotterCode.composants;
+package HarryPotterCode.composants.Spells;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

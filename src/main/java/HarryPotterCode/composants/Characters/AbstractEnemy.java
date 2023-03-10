@@ -1,11 +1,11 @@
-package HarryPotterCode.composants;
+package HarryPotterCode.composants.Characters;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
 @NoArgsConstructor
-public class AbstractEnemy extends Character{
+public class AbstractEnemy extends Character {
     public AbstractEnemy(int health, int defence, int damage, int accuracy) {
         super(health, defence, damage, accuracy);
     }

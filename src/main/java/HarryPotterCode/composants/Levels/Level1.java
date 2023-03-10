@@ -1,5 +1,7 @@
-package HarryPotterCode.composants;
+package HarryPotterCode.composants.Levels;
 
+import HarryPotterCode.composants.Characters.Enemy;
+import HarryPotterCode.composants.Characters.Wizard;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 

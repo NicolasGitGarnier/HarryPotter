@@ -1,5 +1,6 @@
-package HarryPotterCode.composants;
+package HarryPotterCode.composants.Others;
 
+import HarryPotterCode.composants.Others.House;
 import lombok.experimental.UtilityClass;
 
 @UtilityClass

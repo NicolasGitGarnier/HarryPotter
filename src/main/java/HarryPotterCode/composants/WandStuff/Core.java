@@ -1,4 +1,4 @@
-package HarryPotterCode.composants;
+package HarryPotterCode.composants.WandStuff;
 
 public enum Core {
     PHOENIX_FEATHER,

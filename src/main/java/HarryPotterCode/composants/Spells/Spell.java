@@ -41,9 +41,9 @@ public class Spell extends AbstractSpell {
         boolean castSucces = false;
         if (random <= spellCastChance){
             castSucces = true;
-            System.out.println("* You succed to cast the spell " + spell.getName() +" ! (Your score (if above -> fail) : " + random + "/" + spellCastChance + ".");
+            System.out.println("* (Your score (if above -> fail) : " + random + "/" + spellCastChance + "."); //For me to see if it works during battle tests
         }else{
-            System.out.println("* You failed to cast the spell " + spell.getName() +" ! (Your score (if above -> fail) : " + random + "/" + spellCastChance + ".");
+            System.out.println("* (Your score (if above -> fail) : " + random + "/" + spellCastChance + "."); //For me to see if it works during battle tests
         }
         return castSucces;
     }

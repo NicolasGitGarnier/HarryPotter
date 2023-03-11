@@ -65,18 +65,18 @@ public class Main {
         System.out.println("* You are now in the first grade at Poudlard. Here is your first class. *\n"+
                 "- Teacher - Welcome to class every one, let's learn your first easy spell : Wingardium Leviosa.");
         Spell.learnWingardium(wizard.getKnownSpells());
-        //Thread.sleep(1000);
+        Thread.sleep(1000);
         System.out.println("* Your know have a need to pee. So you go to the bathroom of the school next to the Dungeon... *");
-        //Thread.sleep(3000);
+        Thread.sleep(3000);
         System.out.println(" . . . ");
-        //Thread.sleep(1000);
+        Thread.sleep(1000);
 
 
         // --------------- Level 1 --------------- //
         System.out.println("- Troll - Rooooarrrrghh !!!");
-        //Thread.sleep(1500);
+        Thread.sleep(1500);
         System.out.println("* You need to fight him ! The battle start... *");
-        //Thread.sleep(1500);
+        Thread.sleep(1500);
         Level1 level1 = new Level1(wizard);
         Level1.start(args);
     }

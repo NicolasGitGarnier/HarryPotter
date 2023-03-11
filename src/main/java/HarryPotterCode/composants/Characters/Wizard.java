@@ -80,8 +80,14 @@ public class Wizard extends Character {
         for (Spell spell : knownSpells) { //Choice like this : 1. Wingardium Leviosa.
             System.out.println(index++ + ". " + spell.getName());
         }
-        int choice = sc.nextInt();//Look for a number as an answer.
-        return knownSpells.get(choice - 1);// -1 to select the right choice according to the user because List start at indices 0.
+        int choice; //Make sure the user is typing a valid spell number (an existing spell in the list).
+        do {
+            choice = sc.nextInt();
+            if (choice < 1 || choice > knownSpells.size()) {
+                System.out.println("Error. Please enter a number in the list.");
+            }
+        } while (choice < 1 || choice > knownSpells.size());
+        return knownSpells.get(choice - 1);// -1 to select the right choice according to the user because Lists start at indices 0, and our indice start at 1.
     }
 
     // --------------- Potion --------------- //

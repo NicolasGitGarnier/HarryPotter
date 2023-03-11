@@ -11,14 +11,12 @@ import HarryPotterCode.composants.Spells.Spell;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.SneakyThrows;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class Battle {
     Scanner sc = new Scanner(System.in);
-
     private Wizard wizard;
     private Enemy enemy;
     private boolean isFinished = false; //True when the battle is finished.
@@ -28,12 +26,16 @@ public class Battle {
         this.wizard = wizard;
         this.enemy = enemy;
     }
-
     public void start() throws InterruptedException {
+        wizard.setHealth(wizard.getMaxHealth()); //We use health as a temporary variable of the health during the battle.
+        enemy.setHealth(enemy.getMaxHealth());// So this health is accurate only inside battles
+        System.out.println("* ----- Overall stats ----- *");
+        System.out.println("Your health : " + wizard.getHealth());
+        System.out.println(enemy.getName() + " health : " + enemy.getHealth());
+        System.out.println("* ------------------------- *");
         while(!isFinished){ //To define if the battle is finished or not. It is finish when the wizard or enemy is dead.
             //Player turn.
-            System.out.println("***\n" + "Your health :" + wizard.getHealth());
-            System.out.println(enemy.getName() + " health : " + enemy.getHealth() + "\n" + "***");
+            System.out.println("");
             System.out.println("* ----- Your turn ----- *");
             Thread.sleep(2000);
             System.out.println("Choose your action : (Enter a number)\n" +
@@ -48,9 +50,10 @@ public class Battle {
                     if(castSucces){// If he succes, then he attack.
                         wizard.damageCalc(enemy);
                         System.out.println(enemy.getName() + " -" + wizard.damageCalc(enemy) + " damage");
+                        enemy.setHealth(enemy.getHealth() - wizard.damageCalc(enemy));//Modification Health enemy
                         Thread.sleep(1000);
-                        System.out.println("***\n" + "Your health :" + wizard.getHealth());
-                        System.out.println(enemy.getName() + " health : " + enemy.getHealth() + "\n" + "***");
+                        System.out.println("     ***\n" + "Your health :" + wizard.getHealth());
+                        System.out.println(enemy.getName() + " health : " + enemy.getHealth() + "\n" + "     ***");
                         Thread.sleep(2000);
                     }
                 }
@@ -59,18 +62,19 @@ public class Battle {
                 }
             }
             isDead(wizard, enemy);//Check if battle is finished.
+
             //Enemy turn.
             if (!isFinished) {
                 System.out.println("* ----- Enemy turn  ------ *");
                 enemy.damageCalc(wizard);
                 System.out.println(wizard.getFirstName() + " " + wizard.getLastName() + " -" + enemy.damageCalc(wizard) + " damage");
+                wizard.setHealth(wizard.getHealth() - enemy.damageCalc(wizard));
                 Thread.sleep(1000);
-                System.out.println("***\n" + "Your health : " + wizard.getHealth());
-                System.out.println(enemy.getName() + " health : " + enemy.getHealth() + "\n" + "***");
+                System.out.println("     ***\n" + "Your health : " + wizard.getHealth());
+                System.out.println(enemy.getName() + " health : " + enemy.getHealth() + "\n" + "     ***");
                 Thread.sleep(2000);
                 isDead(wizard, enemy);//Check if battle is finished.
             }
-
         }
     }
 

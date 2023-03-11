@@ -46,18 +46,18 @@ public class Main {
                 "* Welcome to Poudlard ! *\n" +
                 "* You are in the " + wizard.getHouse()+ " house. * \n" +
                 "* Your wand is made of "+ wand.getCore() + " and is "+wand.getWandSize()+ " cm long. *");
-        Thread.sleep(4500);
+        //Thread.sleep(4500);
         System.out.println("");
         //Choose your Pet
         Pet pet = Pet.getPet();
         wizard.setPet(pet);
         System.out.println("* Great now you own a " + pet.name().toLowerCase() + ". *");
-        Thread.sleep(1000);
+        //Thread.sleep(1000);
         System.out.println("");
         System.out.println(wizard.Stats());
         System.out.println("");
         System.out.println("* Let's start the adventure ! *");
-        Thread.sleep(2000);
+        //Thread.sleep(2000);
         System.out.println("");
 
 
@@ -65,18 +65,18 @@ public class Main {
         System.out.println("* You are now in the first grade at Poudlard. Here is your first class. *\n"+
                 "- Teacher - Welcome to class every one, let's learn your first easy spell : Wingardium Leviosa.");
         Spell.learnWingardium(wizard.getKnownSpells());
-        Thread.sleep(1000);
+        //Thread.sleep(1000);
         System.out.println("* Your know have a need to pee. So you go to the bathroom of the school next to the Dungeon... *");
-        Thread.sleep(3000);
+        //Thread.sleep(3000);
         System.out.println(" . . . ");
-        Thread.sleep(1000);
+        //Thread.sleep(1000);
 
 
         // --------------- Level 1 --------------- //
         System.out.println("- Troll - Rooooarrrrghh !!!");
-        Thread.sleep(1500);
+        //Thread.sleep(1500);
         System.out.println("* You need to fight him ! The battle start... *");
-        Thread.sleep(1500);
+        //Thread.sleep(1500);
         Level1 level1 = new Level1(wizard);
         Level1.start(args);
     }

@@ -24,7 +24,7 @@ public class Spell extends AbstractSpell {
             String choice = sc.nextLine();
             if ("Wingardium Leviosaaa".equals(choice)) {
                 //SuccesChance = 90. Wizard accuracy = 5. So 95% chance of succed to cast a spell.
-                Spell wingardiumLeviosa = new Spell("Wingardium Leviosa", 90);
+                Spell wingardiumLeviosa = new Spell("Wingardium Leviosa", 50);
                 knownSpells.add(wingardiumLeviosa);
                 spell = choice;
             } else {
@@ -37,7 +37,7 @@ public class Spell extends AbstractSpell {
     // --------------- Spell Mechanic(s) --------------- //
     public static boolean castSpell(Spell spell, Wizard wizard){
         int spellCastChance = spell.getSuccesChance() + wizard.getAccuracy(); // Calculating the accuracy + chance cast of the spell.
-        int random = new Random().nextInt(spellCastChance); // Calculate the chance to succed the casting of the spell.
+        int random = new Random().nextInt(100); // Calculate the chance to succed the casting of the spell.
         boolean castSucces = false;
         if (random <= spellCastChance){
             castSucces = true;

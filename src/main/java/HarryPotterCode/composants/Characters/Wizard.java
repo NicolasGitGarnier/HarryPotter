@@ -67,7 +67,7 @@ public class Wizard extends Character {
         }
         return wizard;
     }
-    public void attack(Character target) throws InterruptedException {
+    public void attack(Character target) throws InterruptedException { //attack function
         Battle battle = new Battle(this, (Enemy) target);
         battle.start();
     }

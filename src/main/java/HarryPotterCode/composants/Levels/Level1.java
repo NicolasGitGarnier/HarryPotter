@@ -6,6 +6,8 @@ import HarryPotterCode.composants.Spells.Spell;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
+import static HarryPotterCode.composants.Characters.Wizard.levelUp;
+
 @Data
 @AllArgsConstructor
 public class Level1 {
@@ -28,6 +30,12 @@ public class Level1 {
         System.out.println("* You need to fight him ! The battle start... *");
         Thread.sleep(1500);
         wizard.attack(troll);
+        Thread.sleep(1000);
+        System.out.println("* Well done you have defeated the troll ! + 50 points for " + wizard.getHouse() +". *");
+        Thread.sleep(2000);
+        //I have not made points for houses, this is just roleplay
+        System.out.println("* You know have finished your first year in Hogwards,choose a characteristic to level up : *");
+        levelUp(wizard);
     }
 }
 

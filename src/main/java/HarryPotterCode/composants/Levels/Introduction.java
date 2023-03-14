@@ -18,7 +18,7 @@ public class Introduction {
         System.out.println("________________________________________________________________________________________________");
         System.out.println("");
         System.out.println("* Hello "+ wizard.getFirstName() + " " + wizard.getLastName()+ ". *\n" +
-                "* Welcome to Poudlard ! *\n" +
+                "* Welcome to Hogwards ! *\n" +
                 "* You are in the " + wizard.getHouse()+ " house. * \n" +
                 "* Your wand is made of "+ wand.getCore() + " and is "+wand.getWandSize()+ " cm long. *");
         //Thread.sleep(4500);

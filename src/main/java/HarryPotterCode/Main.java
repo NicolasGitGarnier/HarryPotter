@@ -5,9 +5,8 @@ import HarryPotterCode.composants.Levels.Introduction;
 import HarryPotterCode.composants.Levels.Level1;
 import HarryPotterCode.composants.Levels.Level2;
 import HarryPotterCode.composants.Others.SortingHat;
-import HarryPotterCode.composants.Spells.Spell;
 import HarryPotterCode.composants.WandStuff.Wand;
-import HarryPotterCode.composants.Others.Pet;
+
 
 import java.util.Random;
 import java.util.Scanner;

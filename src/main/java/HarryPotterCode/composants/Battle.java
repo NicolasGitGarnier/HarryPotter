@@ -53,7 +53,7 @@ public class Battle {
                     "1. Cast a Spell\n" +
                     "2. Use a potion");
             while (!sc.hasNextInt()) {
-                System.out.println("Error, please enter 1 or 2.");
+                System.out.println("Enter 1 or 2.");
                 sc.next();
             }
             choice = sc.nextInt();
@@ -75,7 +75,7 @@ public class Battle {
             System.out.println("* ----- Enemy turn  ------ *");
             System.out.println("* " + enemy.getName() + " attacked you ! *");
             enemy.damageCalc(wizard);
-            System.out.println(wizard.getFirstName() + " " + wizard.getLastName() + " -" + enemy.damageCalc(wizard) + " damage");
+            System.out.println(wizard.getFirstName() + " " + wizard.getLastName() + " -" + enemy.damageCalc(wizard) + " damages");
             wizard.setHealth(wizard.getHealth() - enemy.damageCalc(wizard));
             Thread.sleep(1000);
             System.out.println("     ***\n" + "Your health : " + wizard.getHealth());
@@ -94,8 +94,13 @@ public class Battle {
                 Thread.sleep(500);
                 System.out.println("*  ! BOUM ! *");
             }
+            if(spell.getName().equals("Accio")) { // If he uses Accio.
+                System.out.println("* You bring to you one of " + enemy.getName() + "'s teeth ! *");
+                Thread.sleep(500);
+                System.out.println("-" + enemy.getName() + "- ARRRGGHH !");
+            }
             wizard.damageCalc(enemy); //Calculate damages
-            System.out.println(enemy.getName() + " -" + wizard.damageCalc(enemy) + " damage");
+            System.out.println(enemy.getName() + " -" + wizard.damageCalc(enemy) + " damages");
             enemy.setHealth(enemy.getHealth() - wizard.damageCalc(enemy));//Modification of the Health of the enemy.
             Thread.sleep(1000);
             System.out.println("     ***\n" + "Your health :" + wizard.getHealth());

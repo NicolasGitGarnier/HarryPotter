@@ -93,7 +93,7 @@ public class Wizard extends Character {
     // --------------- Levels --------------- //
     public static void levelUp(Wizard wizard) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("* Congrat's, choose the stat you want to level up : (Enter a number) *");
+        System.out.println("* Congrats you passed the level ! Choose the stat you want to level up : (Enter a number) *");
         System.out.println("1. Health\n" +
                 "2. Damage\n" +
                 "3. Defense\n" +

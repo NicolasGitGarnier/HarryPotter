@@ -38,6 +38,7 @@ public class Level1 {
         }else{
             Scanner sc = new Scanner(System.in);
             System.out.println("* You loose the fight... GAME OVER *");
+            System.exit(0);
             /*System.out.println("* Restart the fight ? (Enter 'Yes' to restart, anything else to stop) *");
             String input = sc.next();
             if (input.equalsIgnoreCase("Yes")) {

@@ -8,9 +8,8 @@ public class Enemy extends AbstractEnemy {
     public static Enemy Troll() {
         return new Enemy(20,0, 0, 4, 10 , "Troll");
     }
-
     public static Enemy Basilic() {
-        return new Enemy(15,0, 5, 5, 5,  "Basilic");
+        return new Enemy(30,0, 10, 5, 5,  "Basilic");
     }
     public static Enemy Voldemort() {
         return new Enemy(70,0, 30, 30, 30,  "Voldemort");

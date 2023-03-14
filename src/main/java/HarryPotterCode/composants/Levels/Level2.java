@@ -58,15 +58,17 @@ public class Level2 {
             wizard.attack(basilic);
             EndLevel2(basilic);
         }
+        System.out.println("* After the recent events, the rest of the year in Hogwards has been quite peacefully. *");
+        System.out.println("* You know have finished your second years... After vacation you'll return for others adventures ! *");
     }
     public static void EndLevel2(Enemy basilic) throws InterruptedException{
         if (basilic.getHealth() <= 0) {
-            System.out.println("* Congrats you have defeated the Basilic ! *");
             Thread.sleep(2000);
             System.out.println("* Well done. Know you slice one of his teeth, and stab Tom Jedusor's book !! *");
             levelUp(wizard);
         } else {
             System.out.println("* You loose the fight... GAME OVER *");
+            System.exit(0);
         }
     }
 }

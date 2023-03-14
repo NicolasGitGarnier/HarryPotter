@@ -24,14 +24,33 @@ public class Spell extends AbstractSpell {
             String choice = sc.nextLine();
             if ("Wingardium Leviosaaa".equals(choice)) {
                 //SuccesChance = 90. Wizard accuracy = 5. So 95% chance of succed to cast a spell.
-                Spell wingardiumLeviosa = new Spell("Wingardium Leviosa", 50);
-                knownSpells.add(wingardiumLeviosa);
+                Spell WingardiumLeviosa = new Spell("Wingardium Leviosa", 70);
+                knownSpells.add(WingardiumLeviosa);
                 spell = choice;
             } else {
-                System.out.println("* You failed to learn that spell. *");
+                System.out.println("* You failed to learn the spell. *");
             }
         }
-        System.out.println("* You have succed to learned the spell Wingardium Leviosa *");
+        System.out.println("* You have succeed to learned the spell Wingardium Leviosa *");
+    }
+
+    public static void learnAccio(List<Spell> knownSpells) {
+        Scanner sc = new Scanner(System.in);
+        String spell = null;
+        while (spell == null) {
+            System.out.println("Enter Accio if you want to learn it :");
+            String choice = sc.nextLine();
+            if ("Accio".equals(choice)) {
+                Spell Accio = new Spell("Accio", 70);
+                knownSpells.add(Accio);
+                spell = choice;
+            } else {
+                System.out.println("* Your book hasn't move *");
+                System.out.println("* You failed to learn the spell. *");
+            }
+        }
+        System.out.println("* Your book comes to you slowly... *");
+        System.out.println("* You have succeed to learned the spell Accio *");
     }
 
     // --------------- Spell Mechanic(s) --------------- //

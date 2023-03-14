@@ -3,6 +3,7 @@ package HarryPotterCode;
 import HarryPotterCode.composants.Characters.Wizard;
 import HarryPotterCode.composants.Levels.Introduction;
 import HarryPotterCode.composants.Levels.Level1;
+import HarryPotterCode.composants.Levels.Level2;
 import HarryPotterCode.composants.Others.SortingHat;
 import HarryPotterCode.composants.Spells.Spell;
 import HarryPotterCode.composants.WandStuff.Wand;
@@ -33,7 +34,9 @@ public class Main {
         Introduction.introduction(wizard);
 
         // --------------- Level 1 --------------- //
-        Level1 level1 = new Level1(wizard);
-        Level1.start(args);
+        Level1.level1(wizard);
+
+        // --------------- Level 2 --------------- //
+        Level2.level2(wizard);
     }
 }

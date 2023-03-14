@@ -23,7 +23,7 @@ public class Introduction {
                 "* Your wand is made of "+ wand.getCore() + " and is "+wand.getWandSize()+ " cm long. *");
         //Thread.sleep(4500);
         System.out.println("");
-        Pet pet = Pet.getPet(); //Choose your Pet
+        Pet pet = Pet.getPet(wizard); //Choose your Pet
         wizard.setPet(pet);
         System.out.println("* Great now you own a " + pet.name().toLowerCase() + ". *");
         //Thread.sleep(1000);

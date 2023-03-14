@@ -5,18 +5,18 @@ import HarryPotterCode.composants.Characters.Wizard;
 import HarryPotterCode.composants.Spells.Spell;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NonNull;
+
+import java.util.Scanner;
 
 import static HarryPotterCode.composants.Characters.Wizard.levelUp;
 
 @Data
 @AllArgsConstructor
 public class Level1 {
-    private static Wizard wizard;
-    public Level1(Wizard wizard) {
-        this.wizard = wizard;
-    }
-    public static void start(String[] args) throws InterruptedException {
-        System.out.println("* You are now in the first grade at Poudlard. Here is your first class. *\n"+
+    @NonNull private static Wizard wizard;
+    public static void level1(Wizard wizard) throws InterruptedException {
+        System.out.println("* You are now in the first grade at Hogwards. Here is your first class. *\n"+
                 "- Teacher - Welcome to class every one, let's learn your first easy spell : Wingardium Leviosa.");
         Spell.learnWingardium(wizard.getKnownSpells());
         Thread.sleep(1000);
@@ -30,12 +30,23 @@ public class Level1 {
         System.out.println("* You need to fight him ! The battle start... *");
         Thread.sleep(1500);
         wizard.attack(troll);
-        Thread.sleep(1000);
-        System.out.println("* Well done you have defeated the troll ! + 50 points for " + wizard.getHouse() +". *");
-        Thread.sleep(2000);
-        //I have not made points for houses, this is just roleplay
-        System.out.println("* You know have finished your first year in Hogwards,choose a characteristic to level up : *");
-        levelUp(wizard);
+        if (troll.getHealth() <= 0) {
+            System.out.println("* Well done you have defeated the troll ! + 50 points for " + wizard.getHouse() +". *");
+            Thread.sleep(2000);
+            System.out.println("* You know have finished your first year in Hogwards,choose a characteristic to level up : *");
+            levelUp(wizard);
+        }else{
+            Scanner sc = new Scanner(System.in);
+            System.out.println("* You loose the fight... GAME OVER *");
+            /*System.out.println("* Restart the fight ? (Enter 'Yes' to restart, anything else to stop) *");
+            String input = sc.next();
+            if (input.equalsIgnoreCase("Yes")) {
+                wizard.attack(troll);
+            } else {
+                System.out.println("End of the Game");
+            }*/ //Not using this for the mo'. I still don't know if i'm going to use this or not.
+        }
+
     }
 }
 

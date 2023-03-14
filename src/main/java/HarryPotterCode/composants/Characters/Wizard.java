@@ -53,20 +53,9 @@ public class Wizard extends Character {
         if (house == House.HUFFLEPUFF) {
             wizard.setPotionBonus(potionBonus + 5);
         }
-        if (pet == Pet.OWL) { // marche pas les pets jsp pourquoi
-            wizard.setMaxHealth(health + 10);
-        }
-        if (pet == Pet.RAT) {
-            wizard.setAccuracy(accuracy + 5);
-        }
-        if (pet == Pet.CAT) {
-            wizard.setDamage(damage + 5);
-        }
-        if (pet == Pet.TOAD) {
-            wizard.setPotionBonus(potionBonus + 5);
-        }
         return wizard;
     }
+
     public void attack(Character target) throws InterruptedException { //attack function
         Battle battle = new Battle(this, (Enemy) target);
         battle.start();

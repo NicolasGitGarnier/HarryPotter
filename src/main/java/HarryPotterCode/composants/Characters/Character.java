@@ -30,6 +30,7 @@ public class Character {
     }
 
 
+
     public int damageCalc(Character target) {
         int damage;
         if (target instanceof Enemy) {

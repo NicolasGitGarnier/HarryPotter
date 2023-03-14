@@ -1,4 +1,6 @@
 package HarryPotterCode.composants.Others;
+import HarryPotterCode.composants.Characters.Wizard;
+
 import java.util.Scanner;
 public enum Pet {
     OWL,
@@ -7,7 +9,7 @@ public enum Pet {
     TOAD,
     ;
 
-    public static Pet getPet() {
+    public static Pet getPet(Wizard wizard) {
         Scanner sc = new Scanner(System.in);
         Pet pet = null;
         int choix = 0;
@@ -20,11 +22,11 @@ public enum Pet {
 
             if (sc.hasNextInt()) {
                 choix = sc.nextInt();
-                if (choix < 1 || choix > 4) {
-                    System.out.println("* Error. Please enter a number between 1 and 4. *");
+                if (choix < 1 || choix > 4) { //If the user enter a number but not in the list.
+                    System.out.println("* Enter a number between 1 and 4. *");
                 }
-            } else {
-                System.out.println("* Error. Please enter a number between 1 and 4. *");
+            } else { //If the user enter something else than a number.
+                System.out.println("* Enter a number between 1 and 4. *");
                 sc.next();
             }
             String choice = "";
@@ -42,15 +44,27 @@ public enum Pet {
                     choice = String.valueOf(TOAD);
                     break;
             }
-            for (Pet p : Pet.values()) {
-                if (choice.equals(p.name())) {
-                    pet = p;
+            for (Pet i : Pet.values()) { //I go through my list of pets with the index i.
+                if ( i.name().equals(choice) ) { //We compare the variable choice to the name of the index.
+                    pet = i; //We set the pet that correspond to the choice = the index i.
                     break;
                 }
             }
         }
-
-            return pet;
+        //Modification of statistics with the pet chosen.
+        if (pet == Pet.OWL) {
+            wizard.setMaxHealth(wizard.getMaxHealth() + 10);
+        }
+        if (pet == Pet.RAT) {
+            wizard.setAccuracy(wizard.getAccuracy()+ 5);
+        }
+        if (pet == Pet.CAT) {
+            wizard.setDamage(wizard.getDamage() + 5);
+        }
+        if (pet == Pet.TOAD) {
+            wizard.setPotionBonus(wizard.getPotionBonus() + 5);
+        }
+        return pet;
     }
 }
 

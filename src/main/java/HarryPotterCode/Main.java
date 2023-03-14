@@ -1,5 +1,6 @@
 package HarryPotterCode;
 
+import HarryPotterCode.composants.Characters.Enemy;
 import HarryPotterCode.composants.Characters.Wizard;
 import HarryPotterCode.composants.Levels.Introduction;
 import HarryPotterCode.composants.Levels.Level1;
@@ -17,6 +18,7 @@ public class Main {
 
         // --------------- Initialisation of the character --------------- //
         Scanner sc = new Scanner(System.in);
+
         System.out.println("");
         System.out.println("");
         System.out.println("*---* Welcome into Harry Potter's World... First of all, who are you ? *---*");
@@ -27,15 +29,17 @@ public class Main {
         String lastName = sc.nextLine();
         // Setting the data of the character
         Wand wand = new Wand(Wand.getCore(), Wand.getWandSize());
-        Wizard wizard = Wizard.createWizard(20, 5, new Random().nextInt(3) + 3, 5, 5, firstName, lastName, null, wand, SortingHat.assignHouse(), new ArrayList<>(), new ArrayList<>());
+        Wizard wizard = Wizard.createWizard(30, 0,new Random().nextInt(4) + 2, 0, 10, firstName, lastName, null, wand, SortingHat.assignHouse(), new ArrayList<>(), new ArrayList<>());
 
         // --------------- Introduction --------------- //
         Introduction.introduction(wizard);
 
         // --------------- Level 1 --------------- //
-        Level1.level1(wizard);
+        Level1 level1 = new Level1(wizard);
+        level1.run1(wizard);
 
         // --------------- Level 2 --------------- //
-        Level2.level2(wizard);
+        Level2 level2 = new Level2(wizard);
+        level2.run2(wizard);
     }
 }

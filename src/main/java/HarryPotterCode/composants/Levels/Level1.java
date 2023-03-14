@@ -14,8 +14,8 @@ import static HarryPotterCode.composants.Characters.Wizard.levelUp;
 @Data
 @AllArgsConstructor
 public class Level1 {
-    @NonNull private static Wizard wizard;
-    public static void level1(Wizard wizard) throws InterruptedException {
+    @NonNull private Wizard wizard;
+    public void run1(Wizard wizard) throws InterruptedException {
         System.out.println("* You are now in the first grade at Hogwards. Here is your first class. *\n"+
                 "- Teacher - Welcome to class every one, let's learn your first easy spell : Wingardium Leviosa.");
         Spell.learnWingardium(wizard.getKnownSpells());
@@ -31,9 +31,8 @@ public class Level1 {
         Thread.sleep(1500);
         wizard.attack(troll);
         if (troll.getHealth() <= 0) {
-            System.out.println("* Well done you have defeated the troll ! + 50 points for " + wizard.getHouse() +". *");
             Thread.sleep(2000);
-            System.out.println("* You know have finished your first year in Hogwards,choose a characteristic to level up : *");
+            System.out.println("* You know have finished your first year in Hogwards, *");
             levelUp(wizard);
         }else{
             Scanner sc = new Scanner(System.in);

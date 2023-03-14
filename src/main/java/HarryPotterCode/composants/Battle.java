@@ -75,12 +75,11 @@ public class Battle {
             System.out.println("* ----- Enemy turn  ------ *");
             System.out.println("* " + enemy.getName() + " attacked you ! *");
             enemy.damageCalc(wizard);
-            System.out.println(wizard.getFirstName() + " " + wizard.getLastName() + " -" + enemy.damageCalc(wizard) + " damages");
-            wizard.setHealth(wizard.getHealth() - enemy.damageCalc(wizard));
+            System.out.println(wizard.getFirstName() + " " + wizard.getLastName() + " - " + enemy.damageCalc(wizard) + " damages");
+            wizard.setHealth(wizard.getHealth() - enemy.damageCalc(wizard)); // There is a + because enemy.damageCalc(wizard) is already negativ.
             Thread.sleep(1000);
             System.out.println("     ***\n" + "Your health : " + wizard.getHealth());
             System.out.println(enemy.getName() + " health : " + enemy.getHealth() + "\n" + "     ***");
-            Thread.sleep(2000);
             isDead(wizard, enemy);//Check if battle is finished.
         }
     }
@@ -97,10 +96,10 @@ public class Battle {
             if(spell.getName().equals("Accio")) { // If he uses Accio.
                 System.out.println("* You bring to you one of " + enemy.getName() + "'s teeth ! *");
                 Thread.sleep(500);
-                System.out.println("-" + enemy.getName() + "- ARRRGGHH !");
+                System.out.println("-" + enemy.getName() + "- Arrgh !");
             }
             wizard.damageCalc(enemy); //Calculate damages
-            System.out.println(enemy.getName() + " -" + wizard.damageCalc(enemy) + " damages");
+            System.out.println(enemy.getName() + " - " + wizard.damageCalc(enemy) + " damages");
             enemy.setHealth(enemy.getHealth() - wizard.damageCalc(enemy));//Modification of the Health of the enemy.
             Thread.sleep(1000);
             System.out.println("     ***\n" + "Your health :" + wizard.getHealth());

@@ -53,16 +53,16 @@ public enum Pet {
         }
         //Modification of statistics with the pet chosen.
         if (pet == Pet.OWL) {
-            wizard.setMaxHealth(wizard.getMaxHealth() + 10);
+            wizard.setMaxHealth(wizard.getMaxHealth() + 8);
         }
         if (pet == Pet.RAT) {
-            wizard.setAccuracy(wizard.getAccuracy()+ 5);
+            wizard.setDefence((float) (wizard.getDefence()+ 0.2));
         }
         if (pet == Pet.CAT) {
-            wizard.setDamage(wizard.getDamage() + 5);
+            wizard.setDamage(wizard.getDamage() + 4);
         }
         if (pet == Pet.TOAD) {
-            wizard.setPotionBonus(wizard.getPotionBonus() + 5);
+            wizard.setPotionBonus(wizard.getPotionBonus() + 8);
         }
         return pet;
     }

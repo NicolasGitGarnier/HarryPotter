@@ -9,13 +9,11 @@ import HarryPotterCode.composants.WandStuff.Wand;
 import HarryPotterCode.composants.Others.House;
 import HarryPotterCode.composants.Others.Pet;
 import lombok.*;
-
 @Getter
 @Setter
 @ToString
-@AllArgsConstructor
-@NoArgsConstructor
 public class Wizard extends Character {
+    private int potionBonus;
     private String firstName;
     private String lastName;
     private Pet pet;
@@ -42,16 +40,16 @@ public class Wizard extends Character {
     public static Wizard createWizard(int health, int defence, int damage, int accuracy, int potionBonus, String firstName, String lastName, Pet pet, Wand wand, House house, List<Spell> knownSpells, List<Potion> potions) {
         Wizard wizard = new Wizard(health, defence, damage, accuracy, potionBonus, firstName, lastName, pet, wand, house, knownSpells, potions);
         if (house == House.SLYTHERIN) {
-            wizard.setDamage(damage + 5);
+            wizard.setDamage(damage + 4);
         }
         if (house == House.GRYFFINDOR) {
-            wizard.setDefence(defence + 5);
+            wizard.setDefence(defence + 8);
         }
         if (house == House.RAVENCLAW) {
-            wizard.setAccuracy(accuracy + 5);
+            wizard.setAccuracy(accuracy + 4);
         }
         if (house == House.HUFFLEPUFF) {
-            wizard.setPotionBonus(potionBonus + 5);
+            wizard.setPotionBonus(potionBonus + 10);
         }
         return wizard;
     }
@@ -101,27 +99,27 @@ public class Wizard extends Character {
         int choice = sc.nextInt();
         switch (choice) {
             case 1 -> {
-                int newHealth = wizard.getMaxHealth() + 10;
+                int newHealth = wizard.getMaxHealth() + 15;
                 wizard.setMaxHealth(newHealth);
-                System.out.println("* Your health has been increased by 10. *");
+                System.out.println("* Your health has been increased by 15. *");
                 System.out.println(wizard.Stats());
             }
             case 2 -> {
-                int newDamage = wizard.getDamage() + 5;
+                int newDamage = wizard.getDamage() + 4;
                 wizard.setDamage(newDamage);
-                System.out.println("* Your damage has been increased to by 5. *");
+                System.out.println("* Your damage has been increased to by 4. *");
                 System.out.println(wizard.Stats());
             }
             case 3 -> {
-                int newDefense = wizard.getDefence() + 5;
+                float newDefense = (float) (wizard.getDefence() + 0.1);
                 wizard.setDefence(newDefense);
-                System.out.println("* Your defense has been increased by 5. *");
+                System.out.println("* Your defense has been increased by 10%. *");
                 System.out.println(wizard.Stats());
             }
             case 4 -> {
-                int newPotionBonus = wizard.getPotionBonus() + 5;
+                int newPotionBonus = wizard.getPotionBonus() + 20;
                 wizard.setPotionBonus(newPotionBonus);
-                System.out.println("* Your potion bonus has been increased by 5. *");
+                System.out.println("* Your potion bonus has been increased by 20. *");
                 System.out.println(wizard.Stats());
             }
             default -> System.out.println("* Invalid choice. Enter a number. *");

@@ -5,7 +5,7 @@ import HarryPotterCode.composants.Others.Pet;
 import HarryPotterCode.composants.WandStuff.Wand;
 
 public class Introduction {
-    public static void introduction(Wizard wizard) {
+    public void runi(Wizard wizard) {
         Wand wand = wizard.getWand();
         // --------------- Start of the adventure --------------- //
         System.out.println("________________________________________________________________________________________________");

@@ -32,7 +32,8 @@ public class Main {
         Wizard wizard = Wizard.createWizard(30, 0,new Random().nextInt(4) + 2, 0, 10, firstName, lastName, null, wand, SortingHat.assignHouse(), new ArrayList<>(), new ArrayList<>());
 
         // --------------- Introduction --------------- //
-        Introduction.introduction(wizard);
+        Introduction introduction = new Introduction();
+        introduction.runi(wizard);
 
         // --------------- Level 1 --------------- //
         Level1 level1 = new Level1(wizard);

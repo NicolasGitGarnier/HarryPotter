@@ -29,7 +29,7 @@ public class Main {
         String lastName = sc.nextLine();
         // Setting the data of the character
         Wand wand = new Wand(Wand.getCore(), Wand.getWandSize());
-        Wizard wizard = Wizard.createWizard(30, 0,new Random().nextInt(4) + 2, 0, 10, firstName, lastName, null, wand, SortingHat.assignHouse(), new ArrayList<>(), new ArrayList<>());
+        Wizard wizard = Wizard.createWizard(30, 0,5, 0, 10, firstName, lastName, null, wand, SortingHat.assignHouse(), new ArrayList<>(), new ArrayList<>());
 
         // --------------- Introduction --------------- //
         Introduction introduction = new Introduction();

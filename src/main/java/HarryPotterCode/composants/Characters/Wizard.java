@@ -129,9 +129,10 @@ public class Wizard extends Character {
     }
 
     public static void levelUpLevels(Wizard wizard) {
-        wizard.setHealth(wizard.getHealth() + 10);
+        wizard.setMaxHealth(wizard.getMaxHealth() + 10);
         wizard.setDamage(wizard.getDamage() + 4);
         wizard.setPotionBonus(wizard.getPotionBonus() + 5);
+        System.out.println(wizard.Stats());
     }
 
     // --------------- Stats --------------- //

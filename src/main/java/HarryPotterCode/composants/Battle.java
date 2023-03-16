@@ -31,8 +31,8 @@ public class Battle {
         wizard.setHealth(wizard.getMaxHealth()); //We use health as a temporary variable of the health during the battle.
         enemy.setHealth(enemy.getMaxHealth());// So this health is accurate only inside battles
         System.out.println("* ----- Overall stats ----- *");
-        System.out.println("Your health : " + wizard.getHealth());
-        System.out.println(enemy.getName() + " health : " + enemy.getHealth());
+        System.out.println("Your health : " + wizard.getHealth() + " | Damages : " + wizard.getDamage() + " | Defence : " + wizard.getDefence());
+        System.out.println(enemy.getName() + " health : " + enemy.getHealth() + " | Damages : " + enemy.getDamage() + " | Defence : " + enemy.getDefence());
         System.out.println("* ------------------------- *");
         while(!isFinished){ //To define if the battle is finished or not. It is finish when the wizard or enemy is dead.
             // --------------- Player turn --------------- //
@@ -78,8 +78,8 @@ public class Battle {
             System.out.println(wizard.getFirstName() + " " + wizard.getLastName() + " - " + enemy.damageCalc(wizard) + " damages");
             wizard.setHealth(wizard.getHealth() - enemy.damageCalc(wizard)); // There is a + because enemy.damageCalc(wizard) is already negativ.
             Thread.sleep(1000);
-            System.out.println("     ***\n" + "Your health : " + wizard.getHealth());
-            System.out.println(enemy.getName() + " health : " + enemy.getHealth() + "\n" + "     ***");
+            System.out.println("     ***\n" + "Your health : " + wizard.getHealth() + " | Damages : " + wizard.getDamage() + " | Defence : " + wizard.getDefence());
+            System.out.println(enemy.getName() + " health : " + enemy.getHealth() + " | Damages : " + enemy.getDamage() + " | Defence : " + enemy.getDefence() + "\n" + "     ***");
             isDead(wizard, enemy);//Check if battle is finished.
         }
     }
@@ -88,23 +88,35 @@ public class Battle {
         Spell spell = wizard.chooseSpell(wizard.getKnownSpells());// Wizard need to choose a spell in his list of spells.
         boolean castSucces = Spell.castSpell(spell, wizard);// We defined if the wizard succed to cast his spell.
         if(castSucces){// If he succes to cast the spell he attack.
-            if(spell.getName().equals("Wingardium Leviosa")) { // If he uses Wingardium Leviosa.
-                System.out.println("* You levitate an eavy object over " + enemy.getName() + "'s head and... *");
-                Thread.sleep(500);
-                System.out.println("*  ! BOUM ! *");
+            switch (spell.getName()) {
+                case "Wingardium Leviosa" -> {
+                    System.out.println("* You levitate an eavy object over " + enemy.getName() + "'s head and... *");
+                    Thread.sleep(500);
+                    System.out.println("*  ! BOUM ! *");
+                }
+                case "Accio" -> {
+                    System.out.println("* You bring to you one of " + enemy.getName() + "'s teeth ! *");
+                    Thread.sleep(500);
+                    System.out.println("-" + enemy.getName() + "- Arrgh !");
+                }
+                default -> {
+                }
             }
-            if(spell.getName().equals("Accio")) { // If he uses Accio.
-                System.out.println("* You bring to you one of " + enemy.getName() + "'s teeth ! *");
-                Thread.sleep(500);
-                System.out.println("-" + enemy.getName() + "- Arrgh !");
+            if (enemy.getName().equals("basilic") || spell.getName().equals("Accio")){ //Special case in the level2.
+                wizard.setDamage(wizard.getDamage() + 5);
+                wizard.damageCalc(enemy); //Calculate damages
+                System.out.println(enemy.getName() + " - " + wizard.damageCalc(enemy) + " damages");
+                enemy.setHealth(enemy.getHealth() - wizard.damageCalc(enemy));
+                wizard.setDamage(wizard.getDamage() - 5);
+            }else{
+                wizard.damageCalc(enemy); //Calculate damages
+                System.out.println(enemy.getName() + " - " + wizard.damageCalc(enemy) + " damages");
+                enemy.setHealth(enemy.getHealth() - wizard.damageCalc(enemy));//Modification of the Health of the enemy.
+                Thread.sleep(1000);
+                System.out.println("     ***\n" + "Your health : " + wizard.getHealth() + " | Damages : " + wizard.getDamage() + " | Defence : " + wizard.getDefence());
+                System.out.println(enemy.getName() + " health : " + enemy.getHealth() + " | Damages : " + enemy.getDamage() + " | Defence : " + enemy.getDefence() + "\n" + "     ***");
+                Thread.sleep(2000);
             }
-            wizard.damageCalc(enemy); //Calculate damages
-            System.out.println(enemy.getName() + " - " + wizard.damageCalc(enemy) + " damages");
-            enemy.setHealth(enemy.getHealth() - wizard.damageCalc(enemy));//Modification of the Health of the enemy.
-            Thread.sleep(1000);
-            System.out.println("     ***\n" + "Your health :" + wizard.getHealth());
-            System.out.println(enemy.getName() + " health : " + enemy.getHealth() + "\n" + "     ***");
-            Thread.sleep(2000);
         }else{
             System.out.println("* You missed ... *");
         }

@@ -11,6 +11,7 @@ import HarryPotterCode.composants.Others.Pet;
 import lombok.*;
 @Getter
 @Setter
+@AllArgsConstructor
 @ToString
 public class Wizard extends Character {
     private int potionBonus;
@@ -22,6 +23,7 @@ public class Wizard extends Character {
     private List<Spell> knownSpells;
     private List<Potion> potions;
 
+    //I make a constructor because i have a problem with lomebok
     public Wizard(int health, int defence, int damage, int accuracy, int potionBonus, String firstName, String lastName, Pet pet, Wand wand, House house, List<Spell> knownSpells, List<Potion> potions) {
         this.firstName = firstName;
         this.lastName = lastName;
@@ -43,7 +45,7 @@ public class Wizard extends Character {
             wizard.setDamage(damage + 4);
         }
         if (house == House.GRYFFINDOR) {
-            wizard.setDefence(defence + 8);
+            wizard.setDefence(defence + 0.1f);
         }
         if (house == House.RAVENCLAW) {
             wizard.setAccuracy(accuracy + 4);
@@ -71,7 +73,7 @@ public class Wizard extends Character {
         do {
             choice = sc.nextInt();
             if (choice < 1 || choice > knownSpells.size()) {
-                System.out.println("Error. Please enter a number in the list.");
+                System.out.println("Enter a number in the list.");
             }
         } while (choice < 1 || choice > knownSpells.size());
         return knownSpells.get(choice - 1);// -1 to select the right choice according to the user because Lists start at indices 0, and our indice start at 1.
@@ -124,6 +126,12 @@ public class Wizard extends Character {
             }
             default -> System.out.println("* Invalid choice. Enter a number. *");
         }
+    }
+
+    public static void levelUpLevels(Wizard wizard) {
+        wizard.setHealth(wizard.getHealth() + 10);
+        wizard.setDamage(wizard.getDamage() + 4);
+        wizard.setPotionBonus(wizard.getPotionBonus() + 5);
     }
 
     // --------------- Stats --------------- //

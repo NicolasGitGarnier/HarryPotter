@@ -10,6 +10,7 @@ import lombok.NonNull;
 import java.util.Scanner;
 
 import static HarryPotterCode.composants.Characters.Wizard.levelUp;
+import static HarryPotterCode.composants.Characters.Wizard.levelUpLevels;
 
 @Data
 @AllArgsConstructor
@@ -33,7 +34,7 @@ public class Level1 {
         if (troll.getHealth() <= 0) {
             Thread.sleep(2000);
             System.out.println("* You know have finished your first year in Hogwards, *");
-            levelUp(wizard);
+            levelUpLevels(wizard);
         }else{
             Scanner sc = new Scanner(System.in);
             System.out.println("* You loose the fight... GAME OVER *");

@@ -12,6 +12,7 @@ import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
 
 import static HarryPotterCode.composants.Characters.Wizard.levelUp;
+import static HarryPotterCode.composants.Characters.Wizard.levelUpLevels;
 
 @Data
 @AllArgsConstructor
@@ -54,7 +55,7 @@ public class Level2 {
                     Thread.sleep(1500);
                     System.out.println("* Well done ! Know you slice one of his teeth, and stab Tom Jedusor's book !! *");
                     Thread.sleep(1000);
-                    levelUp(wizard);
+                    levelUpLevels(wizard);
                 }
                 case 2 -> {
                     wizard.attack(basilic);
@@ -68,13 +69,12 @@ public class Level2 {
         System.out.println("* After the recent events : the death of the basilic and the destruction of Tom Jedusor's book, the rest of the year in Hogwards has been quite peacefully. *");
         Thread.sleep(3000);
         System.out.println("* You know have finished your second years... After vacation you'll return for others adventures ! *");
-        levelUp(wizard);
     }
     public void EndLevel2(Enemy basilic) throws InterruptedException{
         if (basilic.getHealth() <= 0) {
             Thread.sleep(2000);
             System.out.println("* Well done. Know you slice one of his teeth, and stab Tom Jedusor's book !! *");
-            levelUp(wizard);
+            levelUpLevels(wizard);
         } else {
             System.out.println("* You loose the fight... GAME OVER *");
             System.exit(0);

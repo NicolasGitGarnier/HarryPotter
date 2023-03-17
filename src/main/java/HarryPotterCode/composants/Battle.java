@@ -22,7 +22,7 @@ public class Battle {
     private boolean isFinished = false; //True when the battle is finished.
 
     // --------------- Battle main code --------------- //
-    public Battle(Wizard wizard, Enemy enemy){ //Used in attack in Wizard.java
+    public Battle(Wizard wizard, Enemy enemy) { //Used in attack in Wizard.java
         this.wizard = wizard;
         this.enemy = enemy;
     }
@@ -34,7 +34,7 @@ public class Battle {
         System.out.println("Your health : " + wizard.getHealth() + " | Damages : " + wizard.getDamage() + " | Defence : " + wizard.getDefence());
         System.out.println(enemy.getName() + " health : " + enemy.getHealth() + " | Damages : " + enemy.getDamage() + " | Defence : " + enemy.getDefence());
         System.out.println("* ------------------------- *");
-        while(!isFinished){ //To define if the battle is finished or not. It is finish when the wizard or enemy is dead.
+        while (!isFinished) { //To define if the battle is finished or not. It is finish when the wizard or enemy is dead.
             // --------------- Player turn --------------- //
             PlayerTurn();
             // --------------- Enemy turn --------------- //
@@ -43,7 +43,7 @@ public class Battle {
     }
 
     // --------------- Functions used in Battle main code --------------- //
-    private void PlayerTurn() throws InterruptedException{
+    private void PlayerTurn() throws InterruptedException {
         System.out.println("");
         Thread.sleep(2000);
         System.out.println("* ----- Your turn ----- *");
@@ -59,7 +59,7 @@ public class Battle {
             choice = sc.nextInt();
         } while (choice != 1 && choice != 2);
         sc.nextLine();
-        switch(choice){ //Action depending on the choice of the user
+        switch (choice) { //Action depending on the choice of the user
             case 1 -> {
                 CastSpell(); //Cast a spell
             }
@@ -69,6 +69,7 @@ public class Battle {
         }
         isDead(wizard, enemy);//Check if battle is finished.
     }
+
     private void EnemyTurn() throws InterruptedException {
         if (!isFinished) {
             System.out.println("");
@@ -83,47 +84,41 @@ public class Battle {
             isDead(wizard, enemy);//Check if battle is finished.
         }
     }
+
     private void CastSpell() throws InterruptedException {
         //ChooseSpell in Wizard.java, others spells function in Spell.java
         Spell spell = wizard.chooseSpell(wizard.getKnownSpells());// Wizard need to choose a spell in his list of spells.
         boolean castSucces = Spell.castSpell(spell, wizard);// We defined if the wizard succed to cast his spell.
-        if(castSucces){// If he succes to cast the spell he attack.
+        if (castSucces) {// If he succes to cast the spell he attack.
 
             switch (spell.getName()) {
                 case "Wingardium Leviosa" -> {
                     System.out.println("* You levitate an eavy object over " + enemy.getName() + "'s head and... *");
                     Thread.sleep(500);
                     System.out.println("*  ! BOUM ! *");
+                    DamageToEnemy();
                 }
                 case "Accio" -> {
                     System.out.println("* You bring to you one of " + enemy.getName() + "'s teeth ! *");
                     Thread.sleep(500);
                     System.out.println("-" + enemy.getName() + "- Arrgh !");
-                    if (enemy.getName().equals("basilic")) {
-                        wizard.setDamage(wizard.getDamage() + 10);
-                        wizard.damageCalc(enemy);
-                        System.out.println(enemy.getName() + " - " + wizard.damageCalc(enemy) + " damages");
-                        enemy.setHealth(enemy.getHealth() - wizard.damageCalc(enemy));
-                        wizard.setDamage(wizard.getDamage() - 10);
-                    }
+                    SpecialCaseBasilic(); //The DamageToEnemy function is in there.
                 }
                 case "Expecto Patronum" -> {
                     System.out.println("* You cast a bright an big white shield... " + enemy.getName() + " can't do anything.");
-                    if (enemy.getName().equals("dementors")) {
-                        enemy.setHealth(0);
-                    }else{
-                        enemy.setDamage(1);
-                    }
-                }
-                default -> {
+                    SpecialCaseDementors(); //The DamageToEnemy function is in there.
                 }
             }
-            DamageToEnemy();
-        }else{
+        } else {
             System.out.println("* You missed ... *");
         }
     }
-    private void DamageToEnemy() throws InterruptedException{
+
+    private void UsePotion() throws InterruptedException {
+        //To Do
+    }
+
+    private void DamageToEnemy() throws InterruptedException {
         wizard.damageCalc(enemy); //Calculate damages
         System.out.println(enemy.getName() + " - " + wizard.damageCalc(enemy) + " damages");
         enemy.setHealth(enemy.getHealth() - wizard.damageCalc(enemy));//Modification of the Health of the enemy.
@@ -131,17 +126,35 @@ public class Battle {
         System.out.println("     ***\n" + "Your health : " + wizard.getHealth() + " | Damages : " + wizard.getDamage() + " | Defence : " + wizard.getDefence());
         System.out.println(enemy.getName() + " health : " + enemy.getHealth() + " | Damages : " + enemy.getDamage() + " | Defence : " + enemy.getDefence() + "\n" + "     ***");
     }
-    private void UsePotion() throws InterruptedException {
-        //To Do
-    }
-    private void isDead(Wizard wizard, AbstractEnemy enemy){
-        if (wizard.getHealth() <= 0){
-            System.out.println("* You have been defeated by " + enemy.getName() +" ! *");
+
+    private void isDead(Wizard wizard, AbstractEnemy enemy) {
+        if (wizard.getHealth() <= 0) {
+            System.out.println("* You have been defeated by " + enemy.getName() + " ! *");
             isFinished = true; // End of the battle
-        } else if (enemy.getHealth() <= 0){
+        } else if (enemy.getHealth() <= 0) {
             System.out.println("* You have defeated " + enemy.getName() + " ! *");
             levelUp(wizard);
             isFinished = true; // End of the battle
+        }
+    }
+
+    private void SpecialCaseBasilic() throws InterruptedException {
+        if (enemy.getName() == "Basilic") {
+            wizard.setDamage(wizard.getDamage() + 20);
+            DamageToEnemy();
+            wizard.setDamage(wizard.getDamage() - 20);
+        } else {
+            DamageToEnemy();
+        }
+    }
+
+    private void SpecialCaseDementors() throws InterruptedException {
+        if (enemy.getName() == "Dementor") {
+            System.out.println("* Dementors are afraid of you and give up the fight... *");
+            enemy.setHealth(0);
+        } else {
+            enemy.setDamage(1);
+            DamageToEnemy();
         }
     }
 }

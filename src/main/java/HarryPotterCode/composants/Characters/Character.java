@@ -22,7 +22,6 @@ public class Character {
 
     public int damageCalc(Character target) {
         int damage;
-
         if (target instanceof Enemy) {
             // Wizard attack enemy.
             // Defence is a % reduction damage. I took accuracy to add to the calcul of damage. But it is my personal choice.

@@ -1,17 +1,13 @@
 package HarryPotterCode;
 
-import HarryPotterCode.composants.Characters.Enemy;
 import HarryPotterCode.composants.Characters.Wizard;
 import HarryPotterCode.composants.Levels.Introduction;
 import HarryPotterCode.composants.Levels.Level1;
 import HarryPotterCode.composants.Levels.Level2;
 import HarryPotterCode.composants.Levels.Level3;
 import HarryPotterCode.composants.Others.SortingHat;
-import HarryPotterCode.composants.Spells.Spell;
 import HarryPotterCode.composants.WandStuff.Wand;
 
-
-import java.util.Random;
 import java.util.Scanner;
 import java.util.ArrayList;
 

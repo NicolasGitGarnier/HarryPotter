@@ -11,9 +11,10 @@ import java.util.Scanner;
 @Data
 @EqualsAndHashCode(callSuper = true)
 public class Spell extends AbstractSpell {
-    public Spell(String name, int succesChance) {
-        super(name, succesChance);
+    public Spell(String name, int succesChance, int spellDamage) {
+        super(name, succesChance, spellDamage);
     }
+
 
     // --------------- LearnSpells --------------- //
     public static void learnWingardium(List<Spell> knownSpells) {
@@ -24,7 +25,7 @@ public class Spell extends AbstractSpell {
             String choice = sc.nextLine();
             if ("Wingardium Leviosaaa".equals(choice)) {
                 //SuccesChance = 90. Wizard accuracy = 5. So 95% chance of succed to cast a spell.
-                Spell WingardiumLeviosa = new Spell("Wingardium Leviosa", 85);
+                Spell WingardiumLeviosa = new Spell("Wingardium Leviosa", 85, 0);
                 knownSpells.add(WingardiumLeviosa);
                 spell = choice;
             } else {
@@ -41,7 +42,7 @@ public class Spell extends AbstractSpell {
             System.out.println("Enter Accio if you want to learn it :");
             String choice = sc.nextLine();
             if ("Accio".equals(choice)) {
-                Spell Accio = new Spell("Accio", 80);
+                Spell Accio = new Spell("Accio", 80, 3);
                 knownSpells.add(Accio);
                 spell = choice;
             } else {
@@ -60,7 +61,7 @@ public class Spell extends AbstractSpell {
             System.out.println("Enter the spell if you want to learn it :");
             String choice = sc.nextLine();
             if ("Expecto Patronumm".equals(choice)) {
-                Spell ExpectoPatronum = new Spell("Expecto Patronum", 70);
+                Spell ExpectoPatronum = new Spell("Expecto Patronum", 70, 0);
                 knownSpells.add(ExpectoPatronum);
                 spell = choice;
             } else {

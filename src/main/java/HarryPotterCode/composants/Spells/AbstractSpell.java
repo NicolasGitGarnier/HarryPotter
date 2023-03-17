@@ -12,4 +12,5 @@ import java.util.Random;
 public class AbstractSpell {
     private String name;
     private int succesChance;
+    private int spellDamage;
 }

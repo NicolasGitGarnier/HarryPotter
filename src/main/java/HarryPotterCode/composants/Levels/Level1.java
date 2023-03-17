@@ -21,7 +21,7 @@ public class Level1 {
                 "- Teacher - Welcome to class every one, let's learn your first easy spell : Wingardium Leviosa.");
         Spell.learnWingardium(wizard.getKnownSpells());
         Thread.sleep(1000);
-        System.out.println("* Your know have a need to pee. So you go to the bathroom of the school next to the Dungeon... *");
+        System.out.println("* Your now have a need to pee. So you go to the bathroom of the school next to the Dungeon... *");
         Thread.sleep(3000);
         System.out.println(" . . . ");
         Thread.sleep(1000);
@@ -33,7 +33,7 @@ public class Level1 {
         wizard.attack(troll);
         if (troll.getHealth() <= 0) {
             Thread.sleep(2000);
-            System.out.println("* You know have finished your first year in Hogwards, *");
+            System.out.println("* You know have finished your first year in Hogwards. *");
             levelUpLevels(wizard);
         }else{
             Scanner sc = new Scanner(System.in);

@@ -88,6 +88,7 @@ public class Battle {
         Spell spell = wizard.chooseSpell(wizard.getKnownSpells());// Wizard need to choose a spell in his list of spells.
         boolean castSucces = Spell.castSpell(spell, wizard);// We defined if the wizard succed to cast his spell.
         if(castSucces){// If he succes to cast the spell he attack.
+
             switch (spell.getName()) {
                 case "Wingardium Leviosa" -> {
                     System.out.println("* You levitate an eavy object over " + enemy.getName() + "'s head and... *");
@@ -98,28 +99,37 @@ public class Battle {
                     System.out.println("* You bring to you one of " + enemy.getName() + "'s teeth ! *");
                     Thread.sleep(500);
                     System.out.println("-" + enemy.getName() + "- Arrgh !");
+                    if (enemy.getName().equals("basilic")) {
+                        wizard.setDamage(wizard.getDamage() + 10);
+                        wizard.damageCalc(enemy);
+                        System.out.println(enemy.getName() + " - " + wizard.damageCalc(enemy) + " damages");
+                        enemy.setHealth(enemy.getHealth() - wizard.damageCalc(enemy));
+                        wizard.setDamage(wizard.getDamage() - 10);
+                    }
+                }
+                case "Expecto Patronum" -> {
+                    System.out.println("* You cast a bright an big white shield... " + enemy.getName() + " can't do anything.");
+                    if (enemy.getName().equals("dementors")) {
+                        enemy.setHealth(0);
+                    }else{
+                        enemy.setDamage(1);
+                    }
                 }
                 default -> {
                 }
             }
-            if (enemy.getName().equals("basilic") || spell.getName().equals("Accio")){ //Special case in the level2.
-                wizard.setDamage(wizard.getDamage() + 5);
-                wizard.damageCalc(enemy); //Calculate damages
-                System.out.println(enemy.getName() + " - " + wizard.damageCalc(enemy) + " damages");
-                enemy.setHealth(enemy.getHealth() - wizard.damageCalc(enemy));
-                wizard.setDamage(wizard.getDamage() - 5);
-            }else{
-                wizard.damageCalc(enemy); //Calculate damages
-                System.out.println(enemy.getName() + " - " + wizard.damageCalc(enemy) + " damages");
-                enemy.setHealth(enemy.getHealth() - wizard.damageCalc(enemy));//Modification of the Health of the enemy.
-                Thread.sleep(1000);
-                System.out.println("     ***\n" + "Your health : " + wizard.getHealth() + " | Damages : " + wizard.getDamage() + " | Defence : " + wizard.getDefence());
-                System.out.println(enemy.getName() + " health : " + enemy.getHealth() + " | Damages : " + enemy.getDamage() + " | Defence : " + enemy.getDefence() + "\n" + "     ***");
-                Thread.sleep(2000);
-            }
+            DamageToEnemy();
         }else{
             System.out.println("* You missed ... *");
         }
+    }
+    private void DamageToEnemy() throws InterruptedException{
+        wizard.damageCalc(enemy); //Calculate damages
+        System.out.println(enemy.getName() + " - " + wizard.damageCalc(enemy) + " damages");
+        enemy.setHealth(enemy.getHealth() - wizard.damageCalc(enemy));//Modification of the Health of the enemy.
+        Thread.sleep(1000);
+        System.out.println("     ***\n" + "Your health : " + wizard.getHealth() + " | Damages : " + wizard.getDamage() + " | Defence : " + wizard.getDefence());
+        System.out.println(enemy.getName() + " health : " + enemy.getHealth() + " | Damages : " + enemy.getDamage() + " | Defence : " + enemy.getDefence() + "\n" + "     ***");
     }
     private void UsePotion() throws InterruptedException {
         //To Do

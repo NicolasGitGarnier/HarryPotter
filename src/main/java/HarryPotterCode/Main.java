@@ -5,6 +5,7 @@ import HarryPotterCode.composants.Characters.Wizard;
 import HarryPotterCode.composants.Levels.Introduction;
 import HarryPotterCode.composants.Levels.Level1;
 import HarryPotterCode.composants.Levels.Level2;
+import HarryPotterCode.composants.Levels.Level3;
 import HarryPotterCode.composants.Others.SortingHat;
 import HarryPotterCode.composants.WandStuff.Wand;
 
@@ -29,8 +30,11 @@ public class Main {
         String lastName = sc.nextLine();
         // Setting the data of the character
         Wand wand = new Wand(Wand.getCore(), Wand.getWandSize());
-        Wizard wizard = Wizard.createWizard(30, 0,5, 0, 10, firstName, lastName, null, wand, SortingHat.assignHouse(), new ArrayList<>(), new ArrayList<>());
+        Wizard wizard = Wizard.createWizard(22, 0,5, 0, 10, firstName, lastName, null, wand, SortingHat.assignHouse(), new ArrayList<>(), new ArrayList<>());
 
+
+        Random randomBonus = new Random(this.accuracy);
+        /*
         // --------------- Introduction --------------- //
         Introduction introduction = new Introduction();
         introduction.runi(wizard);
@@ -44,6 +48,8 @@ public class Main {
         level2.run2(wizard);
 
         // --------------- Level 3 --------------- //
+        Level3 level3 = new Level3(wizard);
+        level3.run3(wizard);
 
         // --------------- Level 4 --------------- //
 
@@ -52,5 +58,6 @@ public class Main {
         // --------------- Level 6 --------------- //
 
         // --------------- Level 7 --------------- //
+        */
     }
 }

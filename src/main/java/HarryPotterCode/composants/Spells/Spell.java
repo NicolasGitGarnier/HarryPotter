@@ -53,6 +53,24 @@ public class Spell extends AbstractSpell {
         System.out.println("* You have succeed to learned the spell Accio *");
     }
 
+    public static void learnExpectoPatronum(List<Spell> knownSpells){
+        Scanner sc = new Scanner(System.in);
+        String spell = null;
+        while (spell == null) {
+            System.out.println("Enter the spell if you want to learn it :");
+            String choice = sc.nextLine();
+            if ("Expecto Patronumm".equals(choice)) {
+                Spell ExpectoPatronum = new Spell("Expecto Patronum", 70);
+                knownSpells.add(ExpectoPatronum);
+                spell = choice;
+            } else {
+                System.out.println("- Teatcher - You hasn't pay attention to what I have juste said...");
+                System.out.println("* You failed to learn the spell. *");
+            }
+        }
+        System.out.println("* You have succeed to learned the spell Expecto Patronum *");
+    }
+
     // --------------- Spell Mechanic(s) --------------- //
     public static boolean castSpell(Spell spell, Wizard wizard){
         int spellCastChance = spell.getSuccesChance() + wizard.getAccuracy(); // Calculating the accuracy + chance cast of the spell.

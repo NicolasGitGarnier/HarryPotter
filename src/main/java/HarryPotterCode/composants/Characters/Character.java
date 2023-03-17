@@ -19,18 +19,12 @@ public class Character {
     @Setter
     private String name;
 
-
     public int damageCalc(Character target) {
-        int damage;
-        if (target instanceof Enemy) {
-            // Wizard attack enemy.
-            // Defence is a % reduction damage. I took accuracy to add to the calcul of damage. But it is my personal choice.
-            damage = Math.round( (this.damage + this.accuracy) - ( (this.damage + this.accuracy) * target.getDefence()) );
-        } else {
-            // Enemy attack wizard.
-            damage = Math.round( (this.damage + this.accuracy) - ( (this.damage + this.accuracy) * target.getDefence()) );
+        int accuracyBonusDamage = 0;
+        if (this.accuracy > 0) {
+            accuracyBonusDamage = new Random().nextInt(this.accuracy);
         }
-        //target.setHealth( target.getHealth() - damage );
+        int damage = Math.round( (this.damage + accuracyBonusDamage) - ( (this.damage + accuracyBonusDamage) * target.getDefence()));
         return damage;
     }
 }

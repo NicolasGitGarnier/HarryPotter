@@ -8,6 +8,7 @@ import HarryPotterCode.composants.Levels.Level3;
 import HarryPotterCode.composants.Others.SortingHat;
 import HarryPotterCode.composants.WandStuff.Wand;
 
+import java.util.Random;
 import java.util.Scanner;
 import java.util.ArrayList;
 
@@ -28,7 +29,6 @@ public class Main {
         // Setting the data of the character
         Wand wand = new Wand(Wand.getCore(), Wand.getWandSize());
         Wizard wizard = Wizard.createWizard(22, 0,5, 0, 10, firstName, lastName, null, wand, SortingHat.assignHouse(), new ArrayList<>(), new ArrayList<>());
-
 
         // --------------- Introduction --------------- //
         Introduction introduction = new Introduction();

@@ -42,7 +42,7 @@ public class Spell extends AbstractSpell {
             System.out.println("Enter Accio if you want to learn it :");
             String choice = sc.nextLine();
             if ("Accio".equals(choice)) {
-                Spell Accio = new Spell("Accio", 80, 3);
+                Spell Accio = new Spell("Accio", 75, 3);
                 knownSpells.add(Accio);
                 spell = choice;
             } else {

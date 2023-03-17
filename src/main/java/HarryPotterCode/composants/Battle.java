@@ -102,6 +102,7 @@ public class Battle {
                     System.out.println("* You bring to you one of " + enemy.getName() + "'s teeth ! *");
                     Thread.sleep(500);
                     System.out.println("-" + enemy.getName() + "- Arrgh !");
+                    wizard.setDamage(wizard.getDamage() + spell.getSpellDamage());
                     SpecialCaseBasilic(); //The DamageToEnemy function is in there.
                 }
                 case "Expecto Patronum" -> {

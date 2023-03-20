@@ -19,34 +19,37 @@ public class Level4 {
         CastSpellLevel4();
 
     }
-
     private void CastSpellLevel4(){
-        Spell spell = wizard.chooseSpell(wizard.getKnownSpells());// Wizard need to choose a spell in his list of spells.
-        boolean castSucces = Spell.castSpell(spell, wizard);// We defined if the wizard succed to cast his spell.
-        if (castSucces) {// If he succes to cast the spell he attack.
+        boolean escape = false;
+        while (!escape){
+            Spell spell = wizard.chooseSpell(wizard.getKnownSpells());// Wizard need to choose a spell in his list of spells.
+            boolean castSucces = Spell.castSpell(spell, wizard);// We defined if the wizard succed to cast his spell.
+            if (castSucces) {// If he succes to cast the spell he attack.
 
-            switch (spell.getName()) {
-                case "Wingardium Leviosa" -> {
-                    System.out.println("* This spell can't get you the Portkey... *");
-                    System.out.println(" <> Your Health : " + wizard.getMaxHealth() + ".");
-                    System.out.println("* You loose 10 Max Health point... *");
-                    wizard.setMaxHealth(wizard.getMaxHealth() - 10);
-                    System.out.println(" >>> Your Health : " + wizard.getMaxHealth() + ".");
+                switch (spell.getName()) {
+                    case "Wingardium Leviosa" -> {
+                        System.out.println("* This spell can't get you the Portkey... *");
+                        System.out.println(" <> Your Health : " + wizard.getMaxHealth() + ".");
+                        System.out.println("* You loose 10 Max Health point... *");
+                        wizard.setMaxHealth(wizard.getMaxHealth() - 10);
+                        System.out.println(" >>> Your Health : " + wizard.getMaxHealth() + ".");
+                    }
+                    case "Accio" -> {
+                        System.out.println("* Congrats you quickly drag the Portkey to you and escape ! *");
+                        escape = true;
+                    }
+                    case "Expecto Patronum" -> {
+                        System.out.println("* This spell can't get you the Portkey... But you cast a bright shield between you and the enemies ! *");
+                        System.out.println("* Try another spell *");
+                    }
                 }
-                case "Accio" -> {
-                    System.out.println("* Congrats you quickly drag the Portkey to you and escape ! *");
-                }
-                case "Expecto Patronum" -> {
-                    System.out.println("* This spell can't get you the Portkey... But you cast a bright shield between you and the enemies ! *");
-                    System.out.println("* Try another spell *");
-                }
+            } else {
+                System.out.println("* You missed your spell ... *");
+                System.out.println(" <> Your Health : " + wizard.getMaxHealth() + ".");
+                System.out.println("* You loose 10 Max Health point... *");
+                wizard.setMaxHealth(wizard.getMaxHealth() - 10);
+                System.out.println(" >>> Your Health : " + wizard.getMaxHealth() + ".");
             }
-        } else {
-            System.out.println("* You missed your spell ... *");
-            System.out.println(" <> Your Health : " + wizard.getMaxHealth() + ".");
-            System.out.println("* You loose 10 Max Health point... *");
-            wizard.setMaxHealth(wizard.getMaxHealth() - 10);
-            System.out.println(" >>> Your Health : " + wizard.getMaxHealth() + ".");
         }
     }
 }

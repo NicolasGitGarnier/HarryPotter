@@ -15,7 +15,6 @@ import static HarryPotterCode.composants.Characters.Wizard.levelUpLevels;
 public class Level3 {
     private Wizard wizard;
     public void run3(Wizard wizard) throws InterruptedException {
-        Scanner sc = new Scanner(System.in);
         System.out.println("* The third year in Hogwards starts. However you have heard that dementors are not far from here and look for a prisoner... *");
         System.out.println("* To prevent any kind of evenement, the professor of Defence against forces of evil is going to teach you a knew spell ! *");
         System.out.println("- Teacher - Good morning class ! Are you ready to learn a knew amazing spell ? Yes ? Great ! \n"

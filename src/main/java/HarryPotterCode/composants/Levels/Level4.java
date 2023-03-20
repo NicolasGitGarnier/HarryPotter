@@ -28,8 +28,10 @@ public class Level4 {
             switch (spell.getName()) {
                 case "Wingardium Leviosa" -> {
                     System.out.println("* This spell can't get you the Portkey... *");
+                    System.out.println(" <> Your Health : " + wizard.getMaxHealth() + ".");
                     System.out.println("* You loose 10 Max Health point... *");
                     wizard.setMaxHealth(wizard.getMaxHealth() - 10);
+                    System.out.println(" >>> Your Health : " + wizard.getMaxHealth() + ".");
                 }
                 case "Accio" -> {
                     System.out.println("* Congrats you quickly drag the Portkey to you and escape ! *");
@@ -41,8 +43,10 @@ public class Level4 {
             }
         } else {
             System.out.println("* You missed your spell ... *");
+            System.out.println(" <> Your Health : " + wizard.getMaxHealth() + ".");
             System.out.println("* You loose 10 Max Health point... *");
             wizard.setMaxHealth(wizard.getMaxHealth() - 10);
+            System.out.println(" >>> Your Health : " + wizard.getMaxHealth() + ".");
         }
     }
 }

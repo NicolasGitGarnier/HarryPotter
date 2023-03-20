@@ -10,7 +10,6 @@ import java.util.Scanner;
 
 import static HarryPotterCode.composants.Characters.Wizard.levelUpLevels;
 
-@Data
 @AllArgsConstructor
 public class Level3 {
     private Wizard wizard;

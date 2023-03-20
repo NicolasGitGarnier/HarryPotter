@@ -2,22 +2,23 @@ package HarryPotterCode.composants.Levels;
 
 import HarryPotterCode.composants.Characters.Wizard;
 import HarryPotterCode.composants.Spells.Spell;
+import lombok.AllArgsConstructor;
 
 import static HarryPotterCode.composants.Characters.Wizard.levelUpLevels;
 
+@AllArgsConstructor
 public class Level4 {
     private Wizard wizard;
 
     public void run4(Wizard wizard) throws InterruptedException {
-        System.out.println("* Welcome in 4th grade ! This year will be quite difficult you'll participate to the tree wizard tournament... *");
-        System.out.println("* You go to your first class... *");
-        Thread.sleep(1000);
-        System.out.println("* The year has been charge in exams but you succeed them and finally the tournament arrived... *");
-        System.out.println("* You're in the finalist however, this tournament is a trap !! *");
-        Thread.sleep(1000);
-        System.out.println("* You have been teleport in a graveyard... Whatchout you're in the presence of Voldemort and Petter Pettigrew !!!!! *");
+        System.out.println("* Welcome in 4th grade ! This year will be quite difficult because you will participate to the three wizards tournament... *");
+        Thread.sleep(1500);
+        System.out.println("* The year has been charge in exams but you pass ! *");
+        System.out.println("* Today is the great day because the tournament START ! You manage to be in the finalist, however it's a trap... *");
+        Thread.sleep(2000);
+        System.out.println("* You have been teleport in a graveyard... Watch-out you're in the presence of Voldemort and Petter Pettigrew !!!!! *");
         System.out.println("* Catch the Portkey with a spell to escape ! *");
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         CastSpellLevel4();
         System.out.println("* That was close but well done ! Your fourth year in Hogwwards is finished ! *");
         levelUpLevels(wizard);
@@ -32,8 +33,7 @@ public class Level4 {
                 switch (spell.getName()) {
                     case "Wingardium Leviosa" -> {
                         System.out.println("* This spell can't get you the Portkey... *");
-                        System.out.println(" <> Your Health : " + wizard.getMaxHealth() + ".");
-                        System.out.println("* You loose 10 Max Health point... *");
+                        System.out.println("* Voldemort gently roast you with a spell and you loose 10 Max Health points...");
                         wizard.setMaxHealth(wizard.getMaxHealth() - 10);
                         System.out.println(" >>> Your Health : " + wizard.getMaxHealth() + ".");
                     }
@@ -48,8 +48,7 @@ public class Level4 {
                 }
             } else {
                 System.out.println("* You missed your spell ... *");
-                System.out.println(" <> Your Health : " + wizard.getMaxHealth() + ".");
-                System.out.println("* You loose 10 Max Health point... *");
+                System.out.println("* Voldemort gently roast you with a spell and you loose 10 Max Health points...");
                 wizard.setMaxHealth(wizard.getMaxHealth() - 10);
                 System.out.println(" >>> Your Health : " + wizard.getMaxHealth() + ".");
             }

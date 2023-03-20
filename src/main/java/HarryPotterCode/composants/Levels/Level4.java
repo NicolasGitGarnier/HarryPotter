@@ -3,6 +3,8 @@ package HarryPotterCode.composants.Levels;
 import HarryPotterCode.composants.Characters.Wizard;
 import HarryPotterCode.composants.Spells.Spell;
 
+import static HarryPotterCode.composants.Characters.Wizard.levelUpLevels;
+
 public class Level4 {
     private Wizard wizard;
 
@@ -17,7 +19,8 @@ public class Level4 {
         System.out.println("* Catch the Portkey with a spell to escape ! *");
         Thread.sleep(1000);
         CastSpellLevel4();
-
+        System.out.println("* That was close but well done ! Your fourth year in Hogwwards is finished ! *");
+        levelUpLevels(wizard);
     }
     private void CastSpellLevel4(){
         boolean escape = false;

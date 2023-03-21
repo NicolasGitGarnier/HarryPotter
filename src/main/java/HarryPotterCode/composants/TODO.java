@@ -5,8 +5,11 @@ package HarryPotterCode.composants;
 
 - Rework accuracy // Done
 - Rework diff btwn Accio and Wingardium // Done
+
+- Potion system and optention
 - Correction code avec les this. et les super => lomebok supérieur
-- Chap 4 / 5 / 6 / 7
+- Suppression des statics
+- Chap 6 / 7
 
 ========================================================================================================================
  */

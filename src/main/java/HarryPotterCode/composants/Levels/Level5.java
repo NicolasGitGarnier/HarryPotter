@@ -65,6 +65,8 @@ public class Level5 {
                     System.out.println("* No you do not want to cast this spell to distract her... *");
                 }
             }
+        } else {
+            System.out.println("* You missed your spell... *");
         }
     }
 }

@@ -51,15 +51,18 @@ public class Main {
 
         // --------------- Level 4 --------------- //
         Level4 level4 = new Level4(wizard);
-        level4.run4(wizard);*/
+        level4.run4(wizard);
 
         // --------------- Level 5 --------------- //
         Level5 level5 = new Level5(wizard);
         level5.run5(wizard);
+        */
 
         // --------------- Level 6 --------------- //
-
+        //Level6 level6 = new Level6(wizard);
+        //level6.run6(wizard);
         // --------------- Level 7 --------------- //
-
+        //Level7 level7 = new Level7(wizard);
+        //level7.run7(wizard);
     }
 }

@@ -39,6 +39,8 @@ public class Level5 {
                 Thread.sleep(2000);
                 System.out.println("* Fredd and Georg finally make pop Fireworks in your Wizard's coat ! They are ready to use. You can dismiss your class with Ombrage ! *");
                 System.out.println("* You left the class ... *");
+            } else {
+                System.out.println("* It is not enough, continue ! *");
             }
         }
     }

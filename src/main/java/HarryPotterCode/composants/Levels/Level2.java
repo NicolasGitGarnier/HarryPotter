@@ -19,6 +19,9 @@ import static HarryPotterCode.composants.Characters.Wizard.levelUpLevels;
 public class Level2 {
     private Wizard wizard;
     public void run2(Wizard wizard) throws InterruptedException {
+        System.out.println("");
+        System.out.println("-------------------- Chamber of Secrets ---------------------");
+        System.out.println("");
         Scanner sc = new Scanner(System.in);
         System.out.println("* You are now in the second grade at Hogwards. Here is your first class of the year. *\n" +
                 "- Teacher - Welcome to class every one, let's learn your second easy spell : Accio. Say 'Accio' and bring your book into your hand.");

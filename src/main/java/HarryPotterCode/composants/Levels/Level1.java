@@ -17,6 +17,9 @@ import static HarryPotterCode.composants.Characters.Wizard.levelUpLevels;
 public class Level1 {
     @NonNull private Wizard wizard;
     public void run1(Wizard wizard) throws InterruptedException {
+        System.out.println("");
+        System.out.println("-------------------- Dungeon toilets ---------------------");
+        System.out.println("");
         System.out.println("* You are now in the first grade at Hogwards. Here is your first class. *\n"+
                 "- Teacher - Welcome to class every one, let's learn your first easy spell : Wingardium Leviosa.");
         Spell.learnWingardium(wizard.getKnownSpells());

@@ -13,6 +13,9 @@ import static HarryPotterCode.composants.Characters.Wizard.levelUpLevels;
 public class Level5 {
     private Wizard wizard;
     public void run5(Wizard wizard) throws InterruptedException {
+        System.out.println("");
+        System.out.println("-------------------- Hogwarts examination room ---------------------");
+        System.out.println("");
         System.out.println("* Welcome in your fifth years in Hogwards, this year is quite special because there is the BUSE exam, plus a big garden party at the end. *");
         Thread.sleep(2500);
         System.out.println("* To prepare the garden party you need firework to surprise every one. However you need Fredd and George (in your class) to create those ones before. *");

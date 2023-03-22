@@ -11,6 +11,9 @@ public class Level4 {
     private Wizard wizard;
 
     public void run4(Wizard wizard) throws InterruptedException {
+        System.out.println("");
+        System.out.println("-------------------- Little Hangleton cemetery ---------------------");
+        System.out.println("");
         System.out.println("* Welcome in 4th grade ! This year will be quite difficult because you will participate to the three wizards tournament... *");
         Thread.sleep(1500);
         System.out.println("* The year has been charge in exams but you pass ! *");

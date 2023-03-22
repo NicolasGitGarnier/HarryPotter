@@ -106,8 +106,12 @@ public class Battle {
                     SpecialCaseBasilic(); //The DamageToEnemy function is in there.
                 }
                 case "Expecto Patronum" -> {
-                    System.out.println("* You cast a bright an big white shield... " + enemy.getName() + " can't do anything.");
+                    System.out.println("* You cast a bright an big white shield... " + enemy.getName() + " can't do anything. *");
                     SpecialCaseDementors(); //The DamageToEnemy function is in there.
+                }
+                case "Sectumsempra" -> {
+                    System.out.println("* A bright green light break the air and violently punch " + enemy.getName() + " ! *");
+                    enemy.setHealth(0);
                 }
             }
         } else {

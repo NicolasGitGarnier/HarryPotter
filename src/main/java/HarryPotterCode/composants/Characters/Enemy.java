@@ -14,7 +14,7 @@ public class Enemy extends AbstractEnemy {
         return new Enemy(45,0, 0.0f, 20, 0,  "Dementor");
     }
    public static Enemy Mangemort() {
-        return new Enemy(35,0, 0.3f, 11, 6,  "Mangemort");
+        return new Enemy(40,0, 0.4f, 15, 10,  "Mangemort");
     }
     public static Enemy BelatrixLestrange() {
         return new Enemy(80,0, 0.35f, 25, 10,  "Belatrix Lestrange");
@@ -23,7 +23,7 @@ public class Enemy extends AbstractEnemy {
         return new Enemy(150,0, 0.5f, 30, 20,  "Voldemort");
     }
     public static Enemy DoloresOmbrage() {
-        return new Enemy(500,0, 0.99f, 1, 0,  "Dolores Ombrage");
+        return new Enemy(500,0, 0.95f, 5, 5,  "Dolores Ombrage");
     }
 
 }

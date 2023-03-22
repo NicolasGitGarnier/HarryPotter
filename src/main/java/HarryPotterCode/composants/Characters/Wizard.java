@@ -22,6 +22,7 @@ public class Wizard extends Character {
     private House house;
     private List<Spell> knownSpells;
     private List<Potion> potions;
+    private boolean HavePastDarkSide = false;
 
     //I make a constructor because i have a problem with lomebok
     public Wizard(int health, int defence, int damage, int accuracy, int potionBonus, String firstName, String lastName, Pet pet, Wand wand, House house, List<Spell> knownSpells, List<Potion> potions) {

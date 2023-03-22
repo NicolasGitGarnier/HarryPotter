@@ -32,9 +32,10 @@ public class Main {
         introduction.runi(wizard);
 
         /* Only use : for me when i skip levels and test my latest level release.*/
-         Spell.learnWingardium(wizard.getKnownSpells());
-         Spell.learnAccio(wizard.getKnownSpells());
-         Spell.learnExpectoPatronum(wizard.getKnownSpells());
+        Spell.learnWingardium(wizard.getKnownSpells());
+        Spell.learnAccio(wizard.getKnownSpells());
+        Spell.learnExpectoPatronum(wizard.getKnownSpells());
+        Spell.learnSectumsempra(wizard.getKnownSpells());
 
         /*
         // --------------- Level 1 --------------- //

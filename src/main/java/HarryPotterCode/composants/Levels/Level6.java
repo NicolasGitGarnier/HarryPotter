@@ -4,11 +4,13 @@ import HarryPotterCode.composants.Characters.Enemy;
 import HarryPotterCode.composants.Characters.Wizard;
 import HarryPotterCode.composants.Others.House;
 import HarryPotterCode.composants.Spells.Spell;
+import lombok.AllArgsConstructor;
 
 import java.util.Scanner;
 
 import static HarryPotterCode.composants.Characters.Wizard.levelUpLevels;
 
+@AllArgsConstructor
 public class Level6 {
     private Wizard wizard;
     public void run6(Wizard wizard) throws InterruptedException {

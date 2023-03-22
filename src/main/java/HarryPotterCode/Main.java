@@ -62,8 +62,15 @@ public class Main {
         // --------------- Level 6 --------------- //
         //Level6 level6 = new Level6(wizard);
         //level6.run6(wizard);
+
         // --------------- Level 7 --------------- //
-        //Level7 level7 = new Level7(wizard);
-        //level7.run7(wizard);
+        /* if (!wizard.isHavePastDarkSide()) {
+            Level7 level7 = new Level7(wizard);
+            level7.run7(wizard);
+        } else {
+            Level7Darkside level7Darkside = new Level7Darkside(wizard);
+            level7Darkside.run7(wizard);
+        } */
+
     }
 }

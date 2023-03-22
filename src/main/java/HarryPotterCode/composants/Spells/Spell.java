@@ -25,14 +25,14 @@ public class Spell extends AbstractSpell {
             String choice = sc.nextLine();
             if ("Wingardium Leviosaaa".equals(choice)) {
                 //SuccesChance = 90. Wizard accuracy = 5. So 95% chance of succed to cast a spell.
-                Spell WingardiumLeviosa = new Spell("Wingardium Leviosa", 85, 0);
+                Spell WingardiumLeviosa = new Spell("Wingardium Leviosa", 85, 2);
                 knownSpells.add(WingardiumLeviosa);
                 spell = choice;
             } else {
                 System.out.println("* You failed to learn the spell. *");
             }
         }
-        System.out.println("* You have succeed to learned the spell Wingardium Leviosa *");
+        System.out.println("* You have succeed to learned the spell Wingardium Leviosa. *");
     }
 
     public static void learnAccio(List<Spell> knownSpells) {
@@ -51,7 +51,7 @@ public class Spell extends AbstractSpell {
             }
         }
         System.out.println("* Your book comes to you slowly... *");
-        System.out.println("* You have succeed to learned the spell Accio *");
+        System.out.println("* You have succeed to learned the spell Accio. *");
     }
 
     public static void learnExpectoPatronum(List<Spell> knownSpells){
@@ -69,7 +69,25 @@ public class Spell extends AbstractSpell {
                 System.out.println("* You failed to learn the spell. *");
             }
         }
-        System.out.println("* You have succeed to learned the spell Expecto Patronum *");
+        System.out.println("* You have succeed to learned the spell Expecto Patronum. *");
+    }
+
+    public static void learnSectumsempra(List<Spell> knownSpells){
+        Scanner sc = new Scanner(System.in);
+        String spell = null;
+        while (spell == null) {
+            System.out.println("- Dumbledor - Well well, i'm going to teatch you a deadly spell... Target this bird and say clearly : Sectuumsemmpraaa. ");
+            String choice = sc.nextLine();
+            if ("Sectuumsemmpraaa".equals(choice)) {
+                Spell Sectumsempra = new Spell("Sectumsempra", 30, 9999);
+                knownSpells.add(Sectumsempra);
+                spell = choice;
+            } else {
+                System.out.println("- Dumbledor - Yes yes it is a difficult spell... Try again !");
+                System.out.println("* You failed to learn the spell. *");
+            }
+        }
+        System.out.println("* You have succeed to learned the spell Sectumsempra. *");
     }
 
     // --------------- Spell Mechanic(s) --------------- //
@@ -79,9 +97,9 @@ public class Spell extends AbstractSpell {
         boolean castSucces = false;
         if (random <= spellCastChance){
             castSucces = true;
-            System.out.println("* (Your score (if above -> fail) : " + random + "/" + spellCastChance + "."); //For me to see if it works during battle tests
+            System.out.println("* TRUE (Your score (if above -> fail) : " + random + "/" + spellCastChance + "."); //For me to see if it works during battle tests
         }else{
-            System.out.println("* (Your score (if above -> fail) : " + random + "/" + spellCastChance + "."); //For me to see if it works during battle tests
+            System.out.println("* FALSE (Your score (if above -> fail) : " + random + "/" + spellCastChance + "."); //For me to see if it works during battle tests
         }
         return castSucces;
     }

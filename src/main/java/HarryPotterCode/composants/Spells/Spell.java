@@ -17,7 +17,11 @@ public class Spell extends AbstractSpell {
 
 
     // --------------- LearnSpells --------------- //
-    public static void learnWingardium(List<Spell> knownSpells) {
+    public void learnWingardium(List<Spell> knownSpells) {
+        // No static here but I'm not convinced of the efficacity due to the changes that it has implied. So I only let
+        // this one in non-static method.
+
+
         Scanner sc = new Scanner(System.in);
         String spell = null;
         while (spell == null) {

@@ -5,7 +5,7 @@ public class Enemy extends AbstractEnemy {
         super(maxHealth, health, defence, damage, accuracy, name);
     }
     public static Enemy Troll() {
-        return new Enemy(20,0, 0.0f, 2, 2, "Troll");
+        return new Enemy(14,0, 0.0f, 2, 2, "Troll");
     }
     public static Enemy Basilic() {
         return new Enemy(25,0, 0.2f, 5, 3,  "Basilic");

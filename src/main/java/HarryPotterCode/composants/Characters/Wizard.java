@@ -15,13 +15,13 @@ import lombok.*;
 @ToString
 public class Wizard extends Character {
     private int potionBonus;
-    private String firstName;
-    private String lastName;
+    private final String firstName;
+    private final String lastName;
     private Pet pet;
     private Wand wand;
     private House house;
-    private List<Spell> knownSpells;
-    private List<Potion> potions;
+    private final List<Spell> knownSpells;
+    private final List<Potion> potions;
     private boolean HavePastDarkSide = false;
 
     //I make a constructor because i have a problem with lomebok
@@ -39,24 +39,6 @@ public class Wizard extends Character {
         setAccuracy(accuracy);
         setPotionBonus(potionBonus);
     }
-
-    public static Wizard createWizard(int health, int defence, int damage, int accuracy, int potionBonus, String firstName, String lastName, Pet pet, Wand wand, House house, List<Spell> knownSpells, List<Potion> potions) {
-        Wizard wizard = new Wizard(health, defence, damage, accuracy, potionBonus, firstName, lastName, pet, wand, house, knownSpells, potions);
-        if (house == House.SLYTHERIN) {
-            wizard.setDamage(damage + 4);
-        }
-        if (house == House.GRYFFINDOR) {
-            wizard.setDefence(defence + 0.1f);
-        }
-        if (house == House.RAVENCLAW) {
-            wizard.setAccuracy(accuracy + 4);
-        }
-        if (house == House.HUFFLEPUFF) {
-            wizard.setPotionBonus(potionBonus + 10);
-        }
-        return wizard;
-    }
-
     public void attack(Character target) throws InterruptedException { //attack function
         Battle battle = new Battle(this, (Enemy) target);
         battle.start();

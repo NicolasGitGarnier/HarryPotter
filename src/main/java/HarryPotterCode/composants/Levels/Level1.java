@@ -9,7 +9,6 @@ import lombok.NonNull;
 
 import java.util.Scanner;
 
-import static HarryPotterCode.composants.Characters.Wizard.levelUp;
 import static HarryPotterCode.composants.Characters.Wizard.levelUpLevels;
 
 @Data
@@ -22,7 +21,8 @@ public class Level1 {
         System.out.println("");
         System.out.println("* You are now in the first grade at Hogwards. Here is your first class. *\n"+
                 "- Teacher - Welcome to class every one, let's learn your first easy spell : Wingardium Leviosa.");
-        Spell.learnWingardium(wizard.getKnownSpells());
+        Spell WingardiumLeviosa = new Spell("Wingardium Leviosa", 85, 2);
+        WingardiumLeviosa.learnWingardium(wizard.getKnownSpells());
         Thread.sleep(1000);
         System.out.println("* Your now have a need to pee. So you go to the bathroom of the school next to the Dungeon... *");
         Thread.sleep(3000);

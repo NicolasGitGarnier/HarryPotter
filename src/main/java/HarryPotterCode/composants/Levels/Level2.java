@@ -6,12 +6,10 @@ import HarryPotterCode.composants.Others.House;
 import HarryPotterCode.composants.Spells.Spell;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NonNull;
+
 
 import java.util.Scanner;
-import java.util.concurrent.ThreadLocalRandom;
 
-import static HarryPotterCode.composants.Characters.Wizard.levelUp;
 import static HarryPotterCode.composants.Characters.Wizard.levelUpLevels;
 
 @Data

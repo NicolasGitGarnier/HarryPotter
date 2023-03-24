@@ -5,24 +5,25 @@ import java.util.Random;
 import HarryPotterCode.composants.WandStuff.Core;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 public class Wand {
 
     private Core core;
     private int size;
 
     //Get a random core in the total list
-    public static Core getCore() {
+    public Core getCore() {
         Random randomNum = new Random();
         return Core.values()[randomNum.nextInt(Core.values().length)];
     }
 
     //Get a random size between 10 and 25
-    public static int getWandSize() {
+    public int getWandSize() {
         Random randomNum = new Random();
         return randomNum.nextInt(16) + 10;
     }

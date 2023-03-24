@@ -24,14 +24,16 @@ public class Main {
         System.out.print("Enter your last name : ");
         String lastName = sc.nextLine();
         // Setting the data of the character
-        Wand wand = new Wand(Wand.getCore(), Wand.getWandSize());
-        Wizard wizard = Wizard.createWizard(22, 0,5, 0, 10, firstName, lastName, null, wand, SortingHat.assignHouse(), new ArrayList<>(), new ArrayList<>());
+        Wand wand = new Wand();
+        wand.getCore();
+        wand.setSize(wand.getWandSize());
+        Wizard wizard = new Wizard(22, 0,5, 0, 10, firstName, lastName, null, wand, SortingHat.assignHouse(), new ArrayList<>(), new ArrayList<>());
 
-        /* Only use : for me when i skip levels and test my latest level release.*/
+        /* Only use : for me when i skip levels and test my latest level release.
         Spell.learnWingardium(wizard.getKnownSpells());
         Spell.learnAccio(wizard.getKnownSpells());
         Spell.learnExpectoPatronum(wizard.getKnownSpells());
-        Spell.learnSectumsempra(wizard.getKnownSpells());
+        Spell.learnSectumsempra(wizard.getKnownSpells());*/
         // --------------- Chapters --------------- //
         Levels(wizard);
 
@@ -40,7 +42,7 @@ public class Main {
         // --------------- Introduction --------------- //
         Introduction introduction = new Introduction();
         introduction.runi(wizard);
-        /*// --------------- Level 1 --------------- //
+        // --------------- Level 1 --------------- //
         Level1 level1 = new Level1(wizard);
         level1.run1(wizard);
         // --------------- Level 2 --------------- //
@@ -55,7 +57,7 @@ public class Main {
         // --------------- Level 5 --------------- //
         Level5 level5 = new Level5(wizard);
         level5.run5(wizard);
-        */// --------------- Level 6 --------------- //
+        // --------------- Level 6 --------------- //
         Level6 level6 = new Level6(wizard);
         level6.run6(wizard);
         /*// --------------- Level 7 --------------- //

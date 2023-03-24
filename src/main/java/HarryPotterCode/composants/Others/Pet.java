@@ -9,7 +9,7 @@ public enum Pet {
     TOAD,
     ;
 
-    public static Pet getPet(Wizard wizard) {
+    public static Pet ChoosePet(Wizard wizard) {
         Scanner sc = new Scanner(System.in);
         Pet pet = null;
         int choix = 0;

@@ -5,7 +5,7 @@ import lombok.experimental.UtilityClass;
 
 @UtilityClass
 public class SortingHat {
-    public static House assignHouse() {
+    public House assignHouse() {
         // Generate a random number between 0 and 4
         int randomNum = (int) (Math.random() * 5);
         // Assign a house based on the random number

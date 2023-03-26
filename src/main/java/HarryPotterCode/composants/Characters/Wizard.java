@@ -1,4 +1,5 @@
 package HarryPotterCode.composants.Characters;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -8,11 +9,11 @@ import HarryPotterCode.composants.Spells.Spell;
 import HarryPotterCode.composants.WandStuff.Wand;
 import HarryPotterCode.composants.Others.House;
 import HarryPotterCode.composants.Others.Pet;
-import lombok.*;
-@Getter
-@Setter
+import lombok.AllArgsConstructor;
+import lombok.Data;
+
+@Data
 @AllArgsConstructor
-@ToString
 public class Wizard extends Character {
     private int potionBonus;
     private final String firstName;
@@ -66,12 +67,40 @@ public class Wizard extends Character {
     public Potion choosePotion(List<Potion> potions) { //Choose a potion use in battle loop.
         Scanner sc = new Scanner(System.in);
         System.out.println("* Choose a potion to use: (Enter a number) *");
-        int index = 1; // Start at 1, so the choices start with 1. and not 0.
-        for (Potion potion : potions) { //Choice like this : 1. PotionName
-            System.out.println(index++ + ". " + potion.getName());
-        }
-        int choice = sc.nextInt();//Look for a number as an answer.
+        PrintPotions();
+        int choice; //Make sure the user is typing a valid potion number (an existing potion in the list).
+        do {
+            choice = sc.nextInt();
+            if (choice < 1 || choice > knownSpells.size()) {
+                System.out.println("Enter a number in the list.");
+            }
+        } while (choice < 1 || choice > knownSpells.size());
         return potions.get(choice - 1);// -1 to select the right choice according to the user because List start at indices 0.
+    }
+    public void PrintPotions() {
+        List<String> uniquePotions = new ArrayList<>(); //Add potion that have the wizard to the list. But not in double.
+        for (Potion potion : potions) {
+            String potionName = potion.getName();
+            if (!uniquePotions.contains(potionName)) {
+                uniquePotions.add(potionName);
+            }
+        }
+        int index = 1;
+        for (String potionName : uniquePotions) { //Count the occurrence of each potion that the wizard posses, in order to print the right number of potion possessed.
+            int count = 0;
+            for (Potion potion : potions) {
+                if (potion.getName().equals(potionName)) {
+                    count++;
+                }
+            }
+            System.out.println(index++ + ". " + count + "x " + potionName);
+        }
+    }
+
+    public void addPotion(Potion potion, int quantity) {
+        for (int i = 0; i < quantity; i++) {
+            potions.add(potion);
+        }
     }
     // --------------- Levels --------------- //
     public static void levelUp(Wizard wizard) {
@@ -111,7 +140,7 @@ public class Wizard extends Character {
         }
     }
 
-    public static void levelUpLevels(Wizard wizard) {
+    public static void PassivLevelUp(Wizard wizard) { //Levelup stats of the wizard after each years in Hogwards.
         wizard.setMaxHealth(wizard.getMaxHealth() + 10);
         wizard.setDamage(wizard.getDamage() + 4);
         wizard.setPotionBonus(wizard.getPotionBonus() + 5);

@@ -1,13 +1,13 @@
 package HarryPotterCode.composants.Levels;
 
-import HarryPotterCode.composants.Characters.Enemy;
 import HarryPotterCode.composants.Characters.Wizard;
+import HarryPotterCode.composants.Potions.Potion;
 import HarryPotterCode.composants.Spells.Spell;
 import lombok.AllArgsConstructor;
 
 import java.util.Random;
 
-import static HarryPotterCode.composants.Characters.Wizard.levelUpLevels;
+import static HarryPotterCode.composants.Characters.Wizard.PassivLevelUp;
 
 @AllArgsConstructor
 public class Level5 {
@@ -26,7 +26,7 @@ public class Level5 {
         Thread.sleep(2000);
         System.out.println("* Everything went good. You have been diplomed, well done ! *");
         System.out.println("* Your fifth year is now finished ! *");
-        levelUpLevels(wizard);
+        PassivLevelUp(wizard);
     }
     private void GetFirework() throws InterruptedException{
         boolean haveFirework = false;
@@ -42,6 +42,12 @@ public class Level5 {
                 Thread.sleep(2000);
                 System.out.println("* Fredd and Georg finally make pop Fireworks in your Wizard's coat ! They are ready to use. You can dismiss your class with Ombrage ! *");
                 System.out.println("* You left the class ... *");
+
+                Potion mediumHealPotion = new Potion("Medium Health Potion", 40);
+                Potion bigHealPotion = new Potion("Big Health Potion", 60);
+                wizard.addPotion(mediumHealPotion,2);
+                wizard.addPotion(bigHealPotion,1);
+                System.out.println("* You got 1 big health potion and 2 medium health potions. *");
             } else {
                 System.out.println("* It is not enough, continue ! *");
             }

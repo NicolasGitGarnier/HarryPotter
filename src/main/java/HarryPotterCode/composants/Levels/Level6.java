@@ -3,12 +3,13 @@ package HarryPotterCode.composants.Levels;
 import HarryPotterCode.composants.Characters.Enemy;
 import HarryPotterCode.composants.Characters.Wizard;
 import HarryPotterCode.composants.Others.House;
+import HarryPotterCode.composants.Potions.Potion;
 import HarryPotterCode.composants.Spells.Spell;
 import lombok.AllArgsConstructor;
 
 import java.util.Scanner;
 
-import static HarryPotterCode.composants.Characters.Wizard.levelUpLevels;
+import static HarryPotterCode.composants.Characters.Wizard.PassivLevelUp;
 
 @AllArgsConstructor
 public class Level6 {
@@ -51,7 +52,7 @@ public class Level6 {
                     if (ombrage.getHealth() <= 0){
                         Thread.sleep(1500);
                         System.out.println("* You have defeted her... You feel a bit weird... However the mangemorts are loosing the fight so you left the battlefied with them. *");
-                        levelUpLevels(wizard);
+                        PassivLevelUp(wizard);
                     } else {
                         System.out.println("* You loose the fight... GAME OVER *");
                         System.exit(0);
@@ -78,7 +79,10 @@ public class Level6 {
                 System.out.println("* Well done ! The teatchers have finished battling the invaders. The battle ends. *");
                 System.out.println("* You have passed the sixth years. *");
                 Thread.sleep(1500);
-                levelUpLevels(wizard);
+                PassivLevelUp(wizard);
+                Potion bigHealPotion = new Potion("Big Health Potion", 60);
+                wizard.addPotion(bigHealPotion,2);
+                System.out.println("* You got 2 big health potions. *");
             } else {
                 System.out.println("* You loose the fight... GAME OVER *");
                 System.exit(0);

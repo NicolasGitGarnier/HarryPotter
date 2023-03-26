@@ -4,7 +4,7 @@ import HarryPotterCode.composants.Characters.Wizard;
 import HarryPotterCode.composants.Spells.Spell;
 import lombok.AllArgsConstructor;
 
-import static HarryPotterCode.composants.Characters.Wizard.levelUpLevels;
+import static HarryPotterCode.composants.Characters.Wizard.PassivLevelUp;
 
 @AllArgsConstructor
 public class Level4 {
@@ -24,7 +24,7 @@ public class Level4 {
         Thread.sleep(2000);
         CastSpellLevel4();
         System.out.println("* That was close but well done ! Your fourth year in Hogwwards is finished ! *");
-        levelUpLevels(wizard);
+        PassivLevelUp(wizard);
     }
     private void CastSpellLevel4(){
         boolean escape = false;

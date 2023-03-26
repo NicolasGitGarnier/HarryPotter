@@ -3,6 +3,7 @@ package HarryPotterCode;
 import HarryPotterCode.composants.Characters.Wizard;
 import HarryPotterCode.composants.Levels.*;
 import HarryPotterCode.composants.Others.SortingHat;
+import HarryPotterCode.composants.Potions.Potion;
 import HarryPotterCode.composants.Spells.Spell;
 import HarryPotterCode.composants.WandStuff.Wand;
 
@@ -24,6 +25,7 @@ public class Main {
         System.out.print("Enter your last name : ");
         String lastName = sc.nextLine();
         // Setting the data of the character
+        Potion smallHealPotion = new Potion("Small Health Potion", 20);
         Wand wand = new Wand();
         wand.getCore();
         wand.setSize(wand.getWandSize());

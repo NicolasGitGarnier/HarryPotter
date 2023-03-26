@@ -7,6 +7,7 @@ import static HarryPotterCode.composants.Characters.Wizard.levelUp;
 import HarryPotterCode.composants.Characters.AbstractEnemy;
 import HarryPotterCode.composants.Characters.Enemy;
 import HarryPotterCode.composants.Characters.Wizard;
+import HarryPotterCode.composants.Potions.Potion;
 import HarryPotterCode.composants.Spells.Spell;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -64,7 +65,13 @@ public class Battle {
                 CastSpell(); //Cast a spell
             }
             case 2 -> {
-                UsePotion(); //Use a potion
+                if (wizard.getPotions().isEmpty()) {
+                    System.out.println("* You don't have any potions. *");
+                    System.out.println("* Use a spell instead *");
+                    CastSpell();
+                } else {
+                    UsePotion(); //Use a potion
+                }
             }
         }
         isDead(wizard, enemy);//Check if battle is finished.
@@ -120,7 +127,16 @@ public class Battle {
     }
 
     private void UsePotion() throws InterruptedException {
-        //To Do
+        Potion potion = wizard.choosePotion(wizard.getPotions());// Wizard need to choose a potion in his list of potions.
+        switch (potion.getName()) {
+            case "Small Health Potion", "Medium Health Potion", "Big Health Potion" -> {
+                wizard.setHealth(wizard.getHealth() + potion.getValues());
+                System.out.println("* You have heal yourself by " + potion.getValues() + " points. *");
+                Thread.sleep(1000);
+                wizard.getPotions().remove(potion);
+                System.out.println("* You have used " + potion.getName() + ". *");
+            }
+        }
     }
 
     private void DamageToEnemy() throws InterruptedException {

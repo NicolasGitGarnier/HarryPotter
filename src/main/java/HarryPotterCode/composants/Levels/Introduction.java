@@ -2,6 +2,7 @@ package HarryPotterCode.composants.Levels;
 
 import HarryPotterCode.composants.Characters.Wizard;
 import HarryPotterCode.composants.Others.Pet;
+import HarryPotterCode.composants.Potions.Potion;
 import HarryPotterCode.composants.WandStuff.Wand;
 
 public class Introduction {
@@ -33,5 +34,10 @@ public class Introduction {
         System.out.println("* Let's start the adventure ! *");
         //Thread.sleep(2000);
         System.out.println("");
+
+        Potion smallHealPotion = new Potion("Small Health Potion", 20);
+        wizard.addPotion(smallHealPotion,1);
+        System.out.println("* You got 1 small health potion. *");
+
     }
 }

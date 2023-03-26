@@ -5,7 +5,7 @@ import HarryPotterCode.composants.Characters.Wizard;
 import HarryPotterCode.composants.Spells.Spell;
 import lombok.AllArgsConstructor;
 
-import static HarryPotterCode.composants.Characters.Wizard.levelUpLevels;
+import static HarryPotterCode.composants.Characters.Wizard.PassivLevelUp;
 
 @AllArgsConstructor
 public class Level3 {
@@ -35,11 +35,10 @@ public class Level3 {
             System.out.println("* Well done you survived ! I have no doubt that you are going to be successfully for the rest of the year... *");
             Thread.sleep(1500);
             System.out.println("* The third year in Hogwards is now ended. *");
-            levelUpLevels(wizard);
+            PassivLevelUp(wizard);
         } else {
             System.out.println("* You loose the fight... GAME OVER *");
             System.exit(0);
-
         }
     }
 }

@@ -2,6 +2,7 @@ package HarryPotterCode.composants.Levels;
 
 import HarryPotterCode.composants.Characters.Enemy;
 import HarryPotterCode.composants.Characters.Wizard;
+import HarryPotterCode.composants.Potions.Potion;
 import HarryPotterCode.composants.Spells.Spell;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -9,7 +10,7 @@ import lombok.NonNull;
 
 import java.util.Scanner;
 
-import static HarryPotterCode.composants.Characters.Wizard.levelUpLevels;
+import static HarryPotterCode.composants.Characters.Wizard.PassivLevelUp;
 
 @Data
 @AllArgsConstructor
@@ -37,7 +38,10 @@ public class Level1 {
         if (troll.getHealth() <= 0) {
             Thread.sleep(2000);
             System.out.println("* You know have finished your first year in Hogwards. *");
-            levelUpLevels(wizard);
+            PassivLevelUp(wizard);
+            Potion smallHealPotion = new Potion("Small Health Potion", 20);
+            wizard.addPotion(smallHealPotion,2);
+            System.out.println("* You got 2 small health potions. *");
         }else{
             Scanner sc = new Scanner(System.in);
             System.out.println("* You loose the fight... GAME OVER *");

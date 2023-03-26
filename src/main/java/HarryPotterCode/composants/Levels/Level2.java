@@ -3,6 +3,7 @@ package HarryPotterCode.composants.Levels;
 import HarryPotterCode.composants.Characters.Enemy;
 import HarryPotterCode.composants.Characters.Wizard;
 import HarryPotterCode.composants.Others.House;
+import HarryPotterCode.composants.Potions.Potion;
 import HarryPotterCode.composants.Spells.Spell;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -10,7 +11,7 @@ import lombok.Data;
 
 import java.util.Scanner;
 
-import static HarryPotterCode.composants.Characters.Wizard.levelUpLevels;
+import static HarryPotterCode.composants.Characters.Wizard.PassivLevelUp;
 
 @Data
 @AllArgsConstructor
@@ -56,7 +57,7 @@ public class Level2 {
                     Thread.sleep(1500);
                     System.out.println("* Well done ! Know you slice one of his teeth, and stab Tom Jedusor's book !! *");
                     Thread.sleep(1000);
-                    levelUpLevels(wizard);
+                    PassivLevelUp(wizard);
                 }
                 case 2 -> {
                     wizard.attack(basilic);
@@ -75,7 +76,12 @@ public class Level2 {
         if (basilic.getHealth() <= 0) {
             Thread.sleep(2000);
             System.out.println("* Well done. Know you slice one of his teeth, and stab Tom Jedusor's book !! *");
-            levelUpLevels(wizard);
+            PassivLevelUp(wizard);
+            Potion smallHealPotion = new Potion("Small Health Potion", 20);
+            Potion mediumHealPotion = new Potion("Medium Health Potion", 40);
+            wizard.addPotion(smallHealPotion,1);
+            wizard.addPotion(mediumHealPotion,2);
+            System.out.println("* You got 1 small health potion and 2 medium health potions. *");
         } else {
             System.out.println("* You loose the fight... GAME OVER *");
             System.exit(0);

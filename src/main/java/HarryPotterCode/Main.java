@@ -29,8 +29,8 @@ public class Main {
         Wand wand = new Wand();
         wand.getCore();
         wand.setSize(wand.getWandSize());
-        Wizard wizard = new Wizard(22, 0,5, 0, 10, firstName, lastName, null, wand, SortingHat.assignHouse(), new ArrayList<>(), new ArrayList<>());
-
+        Wizard wizard = new Wizard(22, 0,5, 0, 10, firstName, lastName, null, wand, null, new ArrayList<>(), new ArrayList<>());
+        SortingHat.assignHouse(wizard);
         /* Only use : for me when i skip levels and test my latest level release.
         Spell.learnWingardium(wizard.getKnownSpells());
         Spell.learnAccio(wizard.getKnownSpells());

@@ -14,16 +14,4 @@ public class Potion {
     private String name;
     private int values; //Represent the int of increasing stats.
 
-
-    public void earnMediumPotion(List<Potion> potions) {
-        Potion smallHealPotion = new Potion("Medium Health Potion", 40);
-        potions.add(smallHealPotion);
-    }
-    public void earnBigPotion(List<Potion> potions) {
-        Potion smallHealPotion = new Potion("Big Health Potion", 60);
-        potions.add(smallHealPotion);
-    }
-
-
-
 }

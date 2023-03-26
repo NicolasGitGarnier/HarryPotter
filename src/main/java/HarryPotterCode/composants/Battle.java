@@ -130,8 +130,9 @@ public class Battle {
         Potion potion = wizard.choosePotion(wizard.getPotions());// Wizard need to choose a potion in his list of potions.
         switch (potion.getName()) {
             case "Small Health Potion", "Medium Health Potion", "Big Health Potion" -> {
-                wizard.setHealth(wizard.getHealth() + potion.getValues());
-                System.out.println("* You have heal yourself by " + potion.getValues() + " points. *");
+                wizard.setHealth(wizard.getHealth() + potion.getValues() + wizard.getPotionBonus());
+                int healgain = potion.getValues() + wizard.getPotionBonus();
+                System.out.println("* You have heal yourself by " + healgain + " points. *");
                 Thread.sleep(1000);
                 wizard.getPotions().remove(potion);
                 System.out.println("* You have used " + potion.getName() + ". *");

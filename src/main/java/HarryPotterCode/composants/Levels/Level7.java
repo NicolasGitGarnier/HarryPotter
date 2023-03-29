@@ -7,6 +7,7 @@ public class Level7 {
     public void run7(Wizard wizard) throws InterruptedException {
         System.out.println("");
         System.out.println("-------------------- Poudlard ---------------------");
-        System.out.println("");
+        System.out.println("* Here is your last year in Hogwarts... *");
+        System.out.println("* Prepare for the battle against Voldemort... *");
     }
 }

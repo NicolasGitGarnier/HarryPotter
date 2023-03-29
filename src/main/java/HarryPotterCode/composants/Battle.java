@@ -67,7 +67,7 @@ public class Battle {
             case 2 -> {
                 if (wizard.getPotions().isEmpty()) {
                     System.out.println("* You don't have any potions. *");
-                    System.out.println("* Use a spell instead *");
+                    System.out.println("* Use a spell instead. *");
                     CastSpell();
                 } else {
                     UsePotion(); //Use a potion

@@ -2,7 +2,6 @@ package HarryPotterCode.composants.Characters;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-
 import HarryPotterCode.composants.*;
 import HarryPotterCode.composants.Potions.Potion;
 import HarryPotterCode.composants.Spells.Spell;
